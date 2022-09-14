@@ -1,0 +1,71 @@
+#menu__toggle
+  margin: 0px
+  display: none
+#menu__toggle 
+  opacity: 0
+  
+
+#menu__toggle:checked + .menu__btn > span 
+  transform: rotate(45deg)
+
+#menu__toggle:checked + .menu__btn > span::before 
+  top: 0
+  transform: rotate(0deg)
+
+#menu__toggle:checked + .menu__btn > span::after 
+  top: 0
+  transform: rotate(90deg)
+
+#menu__toggle:checked ~ .menu__box 
+  transform: translateX(-330px)!important
+
+.menu__btn 
+  z-index: 100
+  position: fixed
+  left: 94%
+  margin-right: 64px
+  
+  margin-top: 64px
+  padding-top: 12px
+  height: 40px
+  width: 32px
+  cursor: pointer
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after 
+  display: block
+  position: absolute
+  width: 100%
+  height: 2px
+  background-color: #ffffff
+  transition-duration: .25s
+
+.menu__btn > span::before 
+  content: ''
+  top: -8px
+
+.menu__btn > span::after 
+  content: ''
+  top: 8px
+
+.menu__box 
+  z-index: 4
+  display: block
+  position: fixed
+  background: rgba(2, 17, 29, 0.8)
+  width: 12%
+  height: 100%
+  top: -16px
+  right: -340px 
+  // transform: translate(-150%)
+  transition: transform 0.5s ease-in-out
+
+
+
+
+.menu__item
+  margin-top: 48px
+.menu__item1
+  margin-top: 192px
+
