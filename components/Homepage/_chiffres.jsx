@@ -3,9 +3,9 @@ import React from 'react'
 function Chiffres() {
 		return (
 			<>
-			<div className="demibloc" alt="chiffres">
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="demibloc" alt="chiffres">
 				<video playsInline autoPlay muted loop>
-					<source src="../../videobg6.mp4" type="video/mp4"></source>
+					<source src="/zenith/video/videobg6.mp4" type="video/mp4"></source>
 				</video>
       <div className="demibloc2">
         <div className="background3">

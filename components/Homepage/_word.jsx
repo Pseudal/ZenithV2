@@ -20,10 +20,10 @@ function Wordpage() {
 
 		return (
 			<>
-			<div className="demibloc" alt="wordpage">
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="demibloc" alt="wordpage">
 
 				<video playsInline autoPlay muted loop>
-					<source src="../../videobg4.mp4" type="video/mp4"></source>
+					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
 				</video>
  
       	<div className="demibloc2" alt="Liste de mots">   

@@ -1,0 +1,33 @@
+vich_uploader:
+    db_driver: orm
+    metadata:    
+        type: attribute
+    mappings:
+        imageprojet:
+            uri_prefix: /images/imageprojet
+            upload_destination: 'images/imageprojet'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        imageclient:
+            uri_prefix: /images/imageclient
+            upload_destination: 'images/imageclient'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        logoclient:
+            uri_prefix: /images/logoclient
+            upload_destination: 'images/logoclient'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        logoprojet:
+            uri_prefix: /images/logoprojet
+            upload_destination: 'images/logoprojet'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
