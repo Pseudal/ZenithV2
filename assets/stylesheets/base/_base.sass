@@ -1,0 +1,42 @@
+:root 
+
+  line-height: 1
+  transition: 0.3s
+  height: 100vh
+  width: 100vw
+  
+body 
+  scroll-behavior: smooth
+  -ms-overflow-style: none
+  scrollbar-width: none
+  overflow-y: scroll
+  height: auto
+  margin:0
+  padding:0
+  overflow-x:hidden
+  background-color: $blue
+	
+
+body::-webkit-scrollbar 
+  display: none
+  /* for Chrome, Safari, and Opera */
+
+img
+ pointer-events: none
+
+.main 
+  z-index: -1
+  margin: auto
+  width: auto
+  height: auto
+
+.drag 
+  cursor: grab
+  touch-action: none
+  transform: translate3d(0px, 0px)
+  margin: auto
+
+.contain
+  object-fit: cover
+  max-width: 100%
+  height: auto

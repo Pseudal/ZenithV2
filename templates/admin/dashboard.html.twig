@@ -1,0 +1,212 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<h1 class="title m-5 text-center">Administration</h1>
+<div class=" m-xl-5">
+  <section class="mb-5 text-light m-xl-5">
+    <div class="row gx-xl-5 ">
+      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
+        <!-- Card -->
+        <a
+           class="d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="{{ path('admin_projet_index')}}"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-project-diagram fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" mb-2 text-light">Projet</p>
+            <p class="mb-0">
+              <span class="h5 me-2">{{ projet }} </span>
+              <small class="text-success text-sm"
+                     ><i class="fas fa-arrow-up fa-sm me-1"></i>13,48%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
+        <!-- Card -->
+        <a
+           class="
+                  d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="{{ path('admin_client_index')}}"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-user-tie fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" text-light mb-2">Client</p>
+            <p class="mb-0">
+              <span class="h5 me-2">{{ client }}</span>
+              <small class="text-success text-sm"
+                     ><i class="fas fa-arrow-up fa-sm me-1"></i>23,58%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
+        <!-- Card -->
+        <a
+           class="
+                  d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="#"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-tag fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" text-light mb-2">Tags</p>
+            <p class="mb-0">
+              <span class="h5 me-2">{{ tag }}</span>
+              <small class="text-danger text-sm"
+                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+      <div class="col-xl-4 col-md-6 mb-4">
+        <!-- Card -->
+        <a
+           class="
+                  d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="#"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-image fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" text-light mb-2">Images</p>
+            <p class="mb-0">
+              <span class="h5 me-2">{{ image }} </span>
+              <small class="text-success text-sm"
+                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+      <div class="col-xl-4 col-md-6 mb-4 mb-xl-0">
+        <!-- Card -->
+        <a
+           class="
+                  d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="#"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-download fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" text-light mb-2">Visite</p>
+            <p class="mb-0">
+              <span class="h5 me-2">Lorem% </span>
+              <small class="text-success text-sm"
+                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+      <div class="col-xl-4 col-md-6 mb-4 mb-xl-0">
+        <!-- Card -->
+        <a
+           class="
+                  d-flex
+                  align-items-center
+                  p-4
+                  bg-dark
+                  shadow-4-strong
+                  rounded-6
+                  text-reset
+                  ripple
+                  "
+           href="#"
+           data-ripple-color="hsl(0, 0%, 75%)"
+           >
+          <div class="p-3 bg-theme rounded-4">
+            <i class="fas fa-envelope fa-lg text-white fa-fw"></i>
+          </div>
+
+          <div class="ms-4">
+            <p class=" text-light mb-2">mails</p>
+            <p class="mb-0">
+              <span class="h5 me-2">{{ mail }}</span>
+              <small class="text-success text-sm"
+                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
+                >
+            </p>
+          </div>
+        </a>
+        <!-- Card -->
+      </div>
+
+    </div>
+  </section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{% endblock %}

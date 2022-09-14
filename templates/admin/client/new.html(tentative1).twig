@@ -1,0 +1,143 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+
+
+{% block body %}
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<style>
+    #formulaire{
+        margin-top:  200px;
+        width:600px!important;
+    }
+    #dZUpload{
+        display:block;
+        border-radius:50%;
+    }
+    #image{
+        position: relative;
+        bottom:75px;
+    }
+    .dropzone .dz-preview {
+
+    position: relative;
+    top:-36px;
+    left:-38px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    }
+    .dropzone .dz-preview .dz-image {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    }
+
+</style>
+
+    <div id="formulaire" class="container bg-dark rounded">
+    {{ form_start(form) }}
+
+
+        <div id="image" class="d-flex align-items-center justify-content-center">
+            <div id="dZUpload" class="dropzone" style="height:200px;width:200px;">
+                <div class="dz-default dz-message mt-5 fs-3">Ajouter un logo</div>
+            </div>   
+        </div>
+
+        <h1 class="text-center">Création d'un client</h1>
+
+        <div>
+          <!-- Email input -->
+            <div class="m-4">
+                {{ form_row(form.nomClient, { 'attr': {'class': 'form-control'}}) }}
+
+            </div>
+
+                <!-- Password input -->
+            <div class="m-4 ">
+                {{ form_row(form.website, { 'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <!-- Password input -->
+            <div class="m-4">
+                {{ form_row(form.tag, { 'attr': {'class': 'form-control'}}) }}
+            </div>
+
+                <!-- 2 column grid layout for inline styling -->
+        </div>
+        
+        <div class="pb-4 m-4">
+            <button id="okclient" class="btn btn-primary btn-block ">{{ button_label|default('Save') }}</button>
+        </div>
+
+    {{ form_end(form) }}
+    </div>
+
+    <a href="{{ path('admin_client_index') }}">back to list</a>
+
+
+
+        <script>
+        // init,configure dropzone
+        let Upload = document.querySelector("#okclient");
+        Dropzone.autoDiscover = false;
+
+        var MyDropZone2 = new Dropzone(".dropzone", {
+            thumbnailWidth: 250,
+            thumbnailHeight: 250,
+            autoProcessQueue: false,
+            url: '{{ path('admin_client_new') }}' ,
+            maxFiles: 1,
+            parallelUploads: 1,
+            //resizeQuality:0.8,
+            //resizeWidth: 1920,
+            //resizeHeight: 1080,
+            dictMaxFilesExceeded: 'Only 1 file allowed',
+            acceptedFiles: 'image/*',
+            maxFilesize: 50,  // in Mb
+            addRemoveLinks: false,
+            init: function () { 
+
+                this.on("maxfilesexceeded", function(file) {
+                    this.removeFile(file);
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'For stability reasons, only 50 files are allowed',
+                    })
+                });
+
+                this.on("sending", function(file, xhr, formData) {
+                    // send additional data with the file as POST data if needed.
+                    // formData.append("key", "value");  
+                });
+
+                this.on("error", function(file, message) {
+                    console.log(message)
+                });
+
+                this.on("success", function(file, response) {
+                    console.log(response)
+                });
+
+                this.on("processing", function() {
+                    this.options.autoProcessQueue = true;
+                });
+            }
+        });
+        Upload.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            MyDropZone2.processQueue();
+        })
+    </script>
+{% endblock %}    
+
+{% block js %}
+    <script src="{{ asset('js/admin/ToastNew.js') }}"></script>
+{% endblock %}

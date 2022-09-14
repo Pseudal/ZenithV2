@@ -1,0 +1,66 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}Emails index{% endblock %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('loader') }}
+{% endblock %}
+{% block body %}
+<style>
+.gridjs-td{
+    text-align: center;
+}
+
+</style>
+<div id="loading" class="loading"></div>
+<div class="container">
+    <table id="myTable" class="table text-center ">
+        <thead>
+            <tr>
+
+                <th>Email</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for email in emails %}
+            <tr>
+
+                <td>{{ email.email }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary"href="{{path("app_emails_getall")}}">Télécharger</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
+
+
+<script type="module">
+    import {
+        Grid,
+        html, 
+        h
+    } from "https://unpkg.com/gridjs?module";
+    $("#myTable").Grid({
+        resizable: true,
+        search: true,
+        pagination: {
+          limit: 10
+        },
+        sort: true,
+    });
+
+
+
+</script>
+{% block js %}
+    {{ encore_entry_script_tags('loaderjs') }}
+{% endblock %}
+{% endblock %}

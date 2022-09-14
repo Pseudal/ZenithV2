@@ -1,0 +1,125 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}New ProjetImage{% endblock %}
+{% block head %}<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>{% endblock %}
+
+{% block body %}
+
+ <style>
+        .dz-error-mark {
+            display: block;
+            color: red;
+        }
+        .dz-success-mark {
+            display: block;
+            color: green;
+        }
+        .dz-preview{
+            background: rgba(117, 190, 218, 0.0) !important; /* 0.0 - transparent */
+        }
+        .dz-filename{
+            color: black!important;
+            background-color: transparent ;
+        }
+        .dropzone{
+            min-height: 300px;
+        }
+    </style>
+
+    <h1 class="col-sm-offset-3 text-center my-5">Nouvelles images</h1>
+        <div class="form-group d-flex flex-column justify-content-center align-items-center mt-5">
+            <div class="col-sm-10">
+                <div class="dropzone bg-dark d-flex justify-content-center align-items-center flex-wrap"></div>
+                <div class="">
+                    <button id="ici" type="submit" class="btn btn-block btn-primary" value="Add">Confirmer</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        // init,configure dropzone
+        let Upload = document.querySelector("#ici");
+        Dropzone.autoDiscover = false;
+
+        var MyDropZone = new Dropzone(".dropzone", {
+            autoProcessQueue: false,
+            url: '{{ path('admin_projetImage_upload', {'id': return}) }}' ,
+            maxFiles: 50,
+            parallelUploads: 1,
+            //resizeQuality:0.8,
+            //resizeWidth: 1920,
+            //resizeHeight: 1080,
+            dictMaxFilesExceeded: 'For stability reasons, only 50 files are allowed',
+            acceptedFiles: 'image/*',
+            maxFilesize: 50,  // in Mb
+            addRemoveLinks: false,
+            init: function () { 
+
+                this.on("maxfilesexceeded", function(file) {
+                    this.removeFile(file);
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'For stability reasons, only 50 files are allowed',
+                    })
+                });
+
+                this.on("sending", function(file, xhr, formData) {
+                    // send additional data with the file as POST data if needed.
+                    // formData.append("key", "value");  
+                });
+
+                this.on("queuecomplete", function(file) {
+                    //LONG//
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn btn-success m-2',
+                            cancelButton: 'btn btn-danger m-2'
+                        },
+                        buttonsStyling: false
+                        })
+
+                        swalWithBootstrapButtons.fire({
+                        title: 'Fini',
+                        text: "Voulez vous ajouter plus d'image ?",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonText: 'Oui',
+                        cancelButtonText: 'Non',
+                        reverseButtons: true
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload();
+                        } else if (
+                            /* Read more about handling dismissals below */
+                            result.dismiss === Swal.DismissReason.cancel
+                        ) {
+                            window.location.replace("{{ path('admin_projetImage_index', {'id': return}) }}");
+                        }
+                        else{
+                            location.reload();
+                        }
+                    })
+                    //ENDLONG//
+                });
+                this.on("error", function(file, message) {
+                    console.log(message)
+                });
+
+                this.on("success", function(file, response) {
+                    console.log(response)
+
+                });
+
+                this.on("processing", function() {
+                    this.options.autoProcessQueue = true;
+                });
+            }
+        });
+        Upload.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            MyDropZone.processQueue();
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}ClientImage{% endblock %}
+
+{% block body %}
+    <h1>ClientImage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client_image.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ client_image.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_clientImage_index', {'id': client_image.id}) }}">back to list</a>
+
+    <a href="{{ path('admin_clientImage_edit', {'id': client_image.id}) }}">edit</a>
+
+    {{ include('admin/client_image/_delete_form.html.twig') }}
+{% endblock %}

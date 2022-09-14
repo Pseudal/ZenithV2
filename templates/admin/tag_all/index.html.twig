@@ -1,0 +1,273 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}TagClient index{% endblock %}
+
+{% block head %}   
+
+{% endblock %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('loader') }}
+{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading"></div>
+
+<div class="row mt-5 m-5">
+    <section class=" text-center col-6 ">
+        <h1>Secteur d'activité</h1>
+
+        <table id="tablesecteur" class="">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tag</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for secteur in secteurs %}
+                <tr>
+                    <td>{{ secteur.id }}</td>
+                    <td>{{ secteur.secteur }}</td>
+                    <td>
+                        <button class="edit btn btn-warning" onclick="sendedit({{ secteur.id }}, 'secteur', {{ secteur.secteur|json_encode() }})">edit</button>
+                        <a class="btn btn-danger" onclick="supp({{ secteur.id }}, 'secteur')">supp</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" id="secteurid" >Create new</button>
+    </section>
+    <section class="col-6 text-center">
+        <h1>Categorie</h1>
+
+        <table id="tablecategorie" class="">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tag</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for categorie in categories %}
+                <tr>
+                    <td>{{ categorie.id }}</td>
+                    <td>{{ categorie.categorie }}</td>
+                    <td>
+                        <button type="button" class="edit btn btn-warning" onclick="sendedit({{ categorie.id }}, 'categorie', {{ categorie.categorie|json_encode() }})">edit</button>
+                        <a class="btn btn-danger" onclick="supp({{ categorie.id }}, 'categorie')">supp</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" id="categorieid">Create new</button>
+    </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
+
+
+<script type="module">
+    import {
+        Grid,
+        html, 
+        h
+    } from "https://unpkg.com/gridjs?module";
+    
+    $("#tablesecteur").Grid({
+        resizable: true,
+        search: true,
+        pagination: {
+          limit: 10
+        },
+        sort: true,
+    });
+
+    $("#tablecategorie").Grid({
+        resizable: true,
+        search: true,
+        pagination: {
+          limit: 10
+        },
+        sort: true,
+    })
+
+
+</script>
+
+<script>
+
+
+function send (type){
+   swal.fire({
+        title: "Ajouter un secteur/categorie",
+        input: "text",
+        showCancelButton: true,
+        confirmButtonColor: "#0C56D0",
+        confirmButtonText: "Save",
+        cancelButtonText: "Cancel",
+        buttonsStyling: true
+        }).then(function (secteur) {
+            console.log(secteur)
+            if(secteur.isConfirmed){
+                $.ajax({
+                type: "POST",
+                url: "{{ path('admin_tags_addsecteur') }}",
+                data: {
+                    'secteur': secteur.value,
+                    'type': type
+                    },
+                cache: false,
+                success: function(response) {
+                    swal.fire(
+                    "Success!",
+                    "ajouté avec succès !",
+                    "success"
+                    )
+                },
+                error: function (response) {
+                    swal.fire(
+                    "Internal Error",
+                    "Oops, un problème est survenu.", // had a missing comma
+                    "error"
+                    )
+                }
+            });
+            }else{
+            swal.fire(
+            "Cancelled",
+            "Canceled Note",
+            "error"
+            )
+            }
+        }, 
+    ) 
+}
+let secteurbtn = $('#secteurid')
+let categoriebtn = $('#categorieid')
+secteurbtn.click(() => {
+    let type = "secteur";
+    send(type)
+})
+categoriebtn.click(() => {
+    let type = "categorie";
+    send(type)
+})
+
+
+</script>
+
+<script>
+function sendedit(id, type, val){
+   swal.fire({
+        title: "Editer un secteur/categorie",
+        input: "text",
+        inputValue: val,
+        showCancelButton: true,
+        confirmButtonColor: "#0C56D0",
+        confirmButtonText: "Save",
+        cancelButtonText: "Cancel",
+        buttonsStyling: true
+        }).then(function (secteur) {
+            console.log(secteur)
+            if(secteur.isConfirmed){
+                $.ajax({
+                type: "POST",
+                url: "{{ path('admin_tags_edittags') }}",
+                data: {
+                    'id': id,
+                    'type': type,
+                    'newValue': secteur.value
+                    },
+                cache: false,
+                success: function(response) {
+                    swal.fire(
+                    "Success!",
+                    "ajouté avec succès !",
+                    "success"
+                    )
+                },
+                error: function (response) {
+                    swal.fire(
+                    "Internal Error",
+                    "Oops, un problème est survenu.", // had a missing comma
+                    "error"
+                    )
+                }
+            });
+            }else{
+            swal.fire(
+            "Cancelled",
+            "Canceled Note",
+            "error"
+            )
+            }
+        }, 
+    ) 
+}
+</script>
+<script>
+function supp(id, type){
+   swal.fire({
+        title: "Etes vous sûr de supprimer ceci ?",
+        showCancelButton: true,
+        confirmButtonColor: "#F93154",
+        confirmButtonText: "Oui je supprime son existence",
+        cancelButtonText: "nan par pitié pas tapé :c",
+        buttonsStyling: true
+        }).then(function (secteur) {
+            console.log(secteur)
+            if(secteur.isConfirmed){
+                $.ajax({
+                type: "POST",
+                url: "{{ path('admin_tags_supptag') }}",
+                data: {
+                    'id': id,
+                    'type': type,
+                    },
+                cache: false,
+                success: function(response) {
+                    swal.fire(
+                    "Success!",
+                    "ajouté avec succès !",
+                    "success"
+                    )
+                },
+                error: function (response) {
+                    swal.fire(
+                    "Internal Error",
+                    "Oops, un problème est survenu.", // had a missing comma
+                    "error"
+                    )
+                }
+            });
+            }else{
+            swal.fire(
+            "Cancelled",
+            "Canceled Note",
+            "error"
+            )
+            }
+        }, 
+    ) 
+}
+</script>
+    {% block js %}
+        {{ encore_entry_script_tags('loaderjs') }}
+    {% endblock %}
+{% endblock %}
