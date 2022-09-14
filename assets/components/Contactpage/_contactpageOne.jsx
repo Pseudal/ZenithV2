@@ -12,9 +12,9 @@ function ContactPageOne() {
 
 			<div className="background1" alt="homepage">
 
-				<video playsInline autoPlay muted loop>
-					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
-				</video>	
+			<video playsInline autoPlay muted loop>
+				<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
+				</video>
 
 				<div className="opacityBlue">
 					<div className="wrapper">
@@ -22,7 +22,7 @@ function ContactPageOne() {
 			
 							<div className="containerCenter" data-aos="fade-up">
 								<Link to="/">
-								<img src="/zenith/images/bIO1r9F.png" alt="Logo" width={200} className="center" />
+									<img src="/zenith/images/bIO1r9F.png" alt="Logo" width={200} className="center" />
 								</Link>							
 							</div>
 
@@ -34,21 +34,21 @@ function ContactPageOne() {
 									vous dans un délai de 24h.</h6>
 								</div>
 
-								<div className="form__group field  divC1">
-									<input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
-									<label htmlFor="name" className="form__label">Votre nom</label>
+								<div class="form__group field  divC1">
+									<input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+									<label for="name" class="form__label">Votre nom</label>
 
 								</div>
 
-								<div className="form__group2 field divC2">
-									<input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
-									<label htmlFor="name" className="form__label">Votre adresse e-mail</label>
+								<div class="form__group2 field divC2">
+									<input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+									<label for="name" class="form__label">Votre adresse e-mail</label>
 
 								</div>
 
-								<div className="textarea__group field divC3">
-									<textarea type="input" className="form__field" placeholder="Name" name="name" id='name'  required />
-									<label htmlFor="name" className="form__label">Votre besoin</label>
+								<div class="textarea__group field divC3">
+									<textarea type="input" class="form__field" placeholder="Name" name="name" id='name'  required />
+									<label for="name" class="form__label">Votre besoin</label>
 
 								</div>
 							</div>

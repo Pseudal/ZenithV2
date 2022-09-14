@@ -3,9 +3,9 @@ import React from 'react'
 function Instaflux() {
 		return (
 			<>
-			<div className="background" alt="#agencezenith">
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="#agencezenith">
       <video playsInline autoPlay muted loop>
-					<source src="../../videobg8.mp4" type="video/mp4"></source>
+					<source src="/zenith/video/videobg8.mp4" type="video/mp4"></source>
 				</video>
       <div className="opacityBlue">
         <div className="wrapper2">

@@ -11,6 +11,8 @@ function Clientpage() {
 	return ( 
 		<>
 		<Navbar></Navbar>
+
+		
 		<ClientPageOne></ClientPageOne>
 		<ClientpageTwo></ClientpageTwo>
 		<ClientpageThree></ClientpageThree>

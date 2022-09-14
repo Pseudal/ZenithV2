@@ -5,7 +5,7 @@ function MiniFooter() {
 			<>
 
 
-				<div className="demiblocFooter2" alt="footer">
+				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="demiblocFooter2" alt="footer">
 					<div className="demibloc2">
 						<div className="parent4">
 							<div className="divC">

@@ -1,36 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 
 function Footer() {
-	//INFO https://www.freecodecamp.org/news/beginner-react-project-build-basic-forms-using-react-hooks/
-	const [values, setValues] = useState({
-		email: '',
-	});
-
-	const handleEmailInputChange = (event) => {
-		event.persist();
-		setValues((values) => ({
-			...values,
-			email: event.target.value,
-			
-		}));
-		console.log(values.email)
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const requestOptions = {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ "email": values.email, "new": true }),
-		};
-		fetch('/api/emails', requestOptions)
-			.then(response => response.json())
-	};
-
 		return (
 			<>
-				<div className="demiblocFooter" alt="footer">
+				<div style={{backgroundImage: "url(/zenith/images/W0L2wTw.jpg)"}} className="demiblocFooter" alt="footer">
       		        <div className="demibloc2">
 						<div className="emptyS"></div>
 						<h2 className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
@@ -42,7 +16,7 @@ function Footer() {
 					</div>
 				</div>
 
-				<div className="demiblocFooter2" alt="footer">
+				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="demiblocFooter2" alt="footer">
 					<div className="demibloc2">
 						<div className="parent4">
 							<div className="divC">
@@ -57,16 +31,11 @@ function Footer() {
       						<a className="insta2" href='https://www.instagram.com/agencezenith/?hl=fr'></a>
       						<a className="linkedin2" href='https://www.linkedin.com/company/agence-zenith/'></a>
     						</div>
-								<form onSubmit={handleSubmit} >
 									<h4 className="titreD medium letterSpacing marginBottom ">NEWSLETTER</h4>
-									<input className="inputMail center"
-									type="email" 
-									id="email" 
-									size="30" name="email" 
-									value={values.email}
-									onChange={handleEmailInputChange}
-									required></input>
-								</form>
+									<div className="rs2 centerFlex center">
+									<input className="inputMail center" type="email" id="email" pattern=".+@globex\.com" size="30" required></input>
+									<button className='btnSM'>ENVOYER</button>
+									</div>
 							</div>
 
 							<div className="divE">
@@ -91,6 +60,9 @@ function Footer() {
 					</div>
 				</div>
           
+
+
+
 			</>
 		);
 	}

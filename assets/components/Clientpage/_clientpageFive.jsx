@@ -8,7 +8,7 @@ function ClientpageFive() {
 	AOS.init()
 		return (
 			<>
-			<div className="background">
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">
 				<div className='opacityBlue'>
 					<div className='wrapper'>
 						<div className='parentClientView'>

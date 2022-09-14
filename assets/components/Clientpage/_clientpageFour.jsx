@@ -8,7 +8,7 @@ function ClientpageFour() {
 	AOS.init()
 		return (
 			<>
-			<div className="background">	
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">	
 			<div className='opacityBlue'>
 				<div className='wrapper2'>
 					<div className='containerCenterA'>
@@ -16,8 +16,8 @@ function ClientpageFour() {
 					<div className='parent21 marginTop'>
 
 						<div className='marginTop2'>
-							<h4 className='light'>ÉLÉMENTS DE PRÉCISION</h4>
-							<p className='light containerCenterClient'>Création charte graphique logo
+							<h3 className='light letterSpacingS'>ÉLÉMENTS DE PRÉCISION</h3>
+							<p className='light containerCenterClient text-h5'>Création charte graphique logo
 																	Redesign du logo
 																	Création de # propre
 																	Mise en place d’action récurrente

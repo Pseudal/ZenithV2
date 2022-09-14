@@ -1,6 +1,5 @@
-import React, { useState } from "react"
-import { Link, Outlet } from "react-router-dom";
-import '../stylesheets/main.sass';
+import React from "react"
+
 import Homepage from './Homepage/_homepage';
 import Wordpage from './Homepage/_word';
 import Emotion from './Homepage/_emotion';
@@ -16,21 +15,15 @@ import RsButton from './_rsButton';
 import LinesTop from './_linesTop';
 import LinesBottom from './_linesBottom';
 
-window.React = React
+
 
 function Home() {
-
-
-return (
-  <>
-	
-	<Outlet />
-	<Navbar></Navbar>
-	<LinesTop></LinesTop>
-	<LinesBottom></LinesBottom>
-	<RsButton></RsButton>
-
-	<div className="main">
+	return (
+		<>
+		<Navbar></Navbar>
+		<LinesTop></LinesTop>
+		<LinesBottom></LinesBottom>
+		<RsButton></RsButton>
 
 		<Homepage></Homepage>
 		<Wordpage></Wordpage>
@@ -42,11 +35,7 @@ return (
 		<Vision></Vision>
 		<Instaflux></Instaflux>
 		<Footer></Footer>
-
-	</div>
-  
-  </>
-);
+		</>
+	);
 }
-
 export default Home;

@@ -8,8 +8,10 @@ function Vision()  {
 			<>
 
       {/* <video playsInline autoPlay muted loop>
-					<source src="../../videobg6.mp4" type="video/mp4"></source>
+					<source src="/zenith/video/videobg6.mp4" type="video/mp4"></source>
 				</video> */}
+      <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='background'>
+
 
       <div className="opacityBlue">
         <div className="wrapper">
@@ -75,7 +77,7 @@ function Vision()  {
         </div>
       </div>
     </div>
-
+    </div>
 			</>
 		);
 	}

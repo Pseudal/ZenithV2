@@ -11,9 +11,9 @@ function WorkpageOne() {
 
 			<div className="background1" alt="homepage">
 
-				<video playsInline autoPlay muted loop>
-					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
-				</video>	
+			<video playsInline autoPlay muted loop>
+				<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
+			</video>
 
 				<div className="opacityBlue">
 					<div className="wrapper">

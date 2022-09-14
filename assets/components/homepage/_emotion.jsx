@@ -6,10 +6,10 @@ function Emotion() {
 			 
 
 
-				<div className="background1" alt="émotion">
-			 	{/* <video playsInline autoPlay muted loop>
-					<source src="../../videobg2.mp4" type="video/mp4"></source>
-				</video> */}
+				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="émotion">
+			 	<video playsInline autoPlay muted loop>
+					<source src="/zenith/video/videobg2.mp4" type="video/mp4"></source>
+				</video>
       		<div className="opacityBlue">
         		<div className="wrapper2">
 							<div className="container2 ">

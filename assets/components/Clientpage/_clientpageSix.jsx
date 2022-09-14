@@ -20,7 +20,7 @@ function ClientpageSix() {
 					</div>
 
 
-				<div className='demiblocClient'>
+				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='demiblocClient'>
 					<div className='demiblocOpacity'>
 						<div className='parentClientNextPrev'>
 							<div className='ClientNextPrev1'>

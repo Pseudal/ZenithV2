@@ -6,9 +6,11 @@ import "swiper/css";
 function Creation() {
   return ( 
     <>
-        {/* <video playsInline autoPlay muted loop>
-					<source src="../../videobg4.mp4" type="video/mp4"></source>
-				</video> */}
+      <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">
+
+        <video playsInline autoPlay muted loop>
+					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
+				</video>
 
         <div className="opacityBlue">
           <div className="wrapper2">
@@ -16,8 +18,23 @@ function Creation() {
             <h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">UNE HISTOIRE. UN ENJEU. UNE RÉPONSE.</h6>
 
       <Swiper
-      slidesPerView={7}
+      slidesPerView={1}
       centeredSlides={true}
+      spaceBetween={0}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+      }}
       className="swiper2"
       data-aos="fade-up" data-aos-duration="1000"
       >
@@ -65,6 +82,7 @@ function Creation() {
       
 
       </div>
+    </div>
       </>
       );
     }
@@ -73,8 +91,8 @@ function Creation() {
     
     // const items = ['', '', '', '', '', '','','','','','','',]
     // const setting = {
-    //   dragSpeed: 0.4,
-    //   itemWidth: 200,
+      //   dragSpeed: 0.4,
+      //   itemWidth: 200,
     //   itemHeight: 464,
     //   itemSideOffsets: 40,
     // }

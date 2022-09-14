@@ -8,7 +8,7 @@ function ClientpageTwo() {
 	AOS.init()
 		return (
 			<>
-				<div className='demiblocClient'>
+				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='demiblocClient'>
 					<div className='demiblocClientOpacity'>
 						<div className='parentClient'>
 
