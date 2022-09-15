@@ -28,7 +28,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/base', name: 'dashboard')]
+    #[Route('/base', name: 'base')]
     public function base(ClientRepository $client, ProjetRepository $projet, ClientImageRepository $clientImage, ProjetImageRepository $projetImage, EmailsRepository $emails, SecteurRepository $secteur, CategorieRepository $categorie): Response
     {
         return $this->render('AdminV2/base.twig', [

@@ -654,6 +654,7 @@ function sidenavTypeOnResize() {
 
 
 // Light Mode / Dark Mode
+
 function darkMode(el) {
   const body = document.getElementsByTagName('body')[0];
   const hr = document.querySelectorAll('div:not(.sidenav) > hr');
@@ -674,8 +675,7 @@ function darkMode(el) {
   const card_border_dark = document.querySelectorAll('.card.border.border-dark');
 
   const svg = document.querySelectorAll('g');
-
-  if (!el.getAttribute("checked")) {
+  if (localStorage.getItem("mode") == "light") {
     body.classList.add('dark-version');
     for (var i = 0; i < hr.length; i++) {
       if (hr[i].classList.contains('dark')) {
@@ -740,7 +740,7 @@ function darkMode(el) {
       card_border[i].classList.add('border-dark');
     }
     el.setAttribute("checked", "true");
-  } else {
+  } else if((localStorage.getItem("mode") == "dark")) {
     body.classList.remove('dark-version');
     for (var i = 0; i < hr.length; i++) {
       if (hr[i].classList.contains('light')) {
@@ -808,3 +808,16 @@ function darkMode(el) {
     el.removeAttribute("checked");
   }
 };
+function darkMode2(el){
+  if(el.getAttribute("checked") ){
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
+  darkMode(el);
+}
+
+if(document.getElementById('dark-version')){
+  var el = document.getElementById('dark-version')
+  darkMode(el);
+}

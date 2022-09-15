@@ -6,8 +6,10 @@
 
 {% endblock %}
 {% block stylesheet %}
-    {{ encore_entry_link_tags('loader') }}
+  {{ encore_entry_link_tags('loader') }}
+  {{ parent() }}
 {% endblock %}
+
 {% block body %}
 <div id="loading" class="loading"></div>
 <style>

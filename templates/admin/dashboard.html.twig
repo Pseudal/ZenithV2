@@ -3,206 +3,106 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<h1 class="title m-5 text-center">Administration</h1>
+<h1 class="title text-center">Administration</h1>
 <div class=" m-xl-5">
-  <section class="mb-5 text-light m-xl-5">
+  <section class="mb-5 m-xl-5">
     <div class="row gx-xl-5 ">
-      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
-        <!-- Card -->
-        <a
-           class="d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="{{ path('admin_projet_index')}}"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-project-diagram fa-lg text-white fa-fw"></i>
-          </div>
 
-          <div class="ms-4">
-            <p class=" mb-2 text-light">Projet</p>
-            <p class="mb-0">
-              <span class="h5 me-2">{{ projet }} </span>
-              <small class="text-success text-sm"
-                     ><i class="fas fa-arrow-up fa-sm me-1"></i>13,48%</small
-                >
-            </p>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">work</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Projet</p>
+              <h4 class="mb-0">{{ projet }}</h4>
+            </div>
           </div>
-        </a>
-        <!-- Card -->
-      </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
+          </div>
+        </div>
 
-      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
-        <!-- Card -->
-        <a
-           class="
-                  d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="{{ path('admin_client_index')}}"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-user-tie fa-lg text-white fa-fw"></i>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Client</p>
+              <h4 class="mb-0">{{ client }}</h4>
+            </div>
           </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
+          </div>
+        </div>
 
-          <div class="ms-4">
-            <p class=" text-light mb-2">Client</p>
-            <p class="mb-0">
-              <span class="h5 me-2">{{ client }}</span>
-              <small class="text-success text-sm"
-                     ><i class="fas fa-arrow-up fa-sm me-1"></i>23,58%</small
-                >
-            </p>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">bookmark</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Tags</p>
+              <h4 class="mb-0">{{ tag }}</h4>
+            </div>
           </div>
-        </a>
-        <!-- Card -->
-      </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
+          </div>
+        </div>
 
-      <div class="col-xl-4 col-md-6 mb-4 mb-xl-6">
-        <!-- Card -->
-        <a
-           class="
-                  d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="#"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-tag fa-lg text-white fa-fw"></i>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">image</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Images</p>
+              <h4 class="mb-0">{{ image }}</h4>
+            </div>
           </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
+          </div>
+        </div>
 
-          <div class="ms-4">
-            <p class=" text-light mb-2">Tags</p>
-            <p class="mb-0">
-              <span class="h5 me-2">{{ tag }}</span>
-              <small class="text-danger text-sm"
-                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
-                >
-            </p>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">mail</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Mails</p>
+              <h4 class="mb-0">{{ mail }}</h4>
+            </div>
           </div>
-        </a>
-        <!-- Card -->
-      </div>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
+          </div>
+        </div>
 
-      <div class="col-xl-4 col-md-6 mb-4">
-        <!-- Card -->
-        <a
-           class="
-                  d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="#"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-image fa-lg text-white fa-fw"></i>
+        <div class="card mb-2 col-xl-3 col-md-6 mb-4 mb-xl-6 m-5">
+          <div class="card-header p-3 pt-2">
+            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+              <i class="material-icons opacity-10">cast</i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize">Visite</p>
+              <h4 class="mb-0">Lorem</h4>
+            </div>
           </div>
-
-          <div class="ms-4">
-            <p class=" text-light mb-2">Images</p>
-            <p class="mb-0">
-              <span class="h5 me-2">{{ image }} </span>
-              <small class="text-success text-sm"
-                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
-                >
-            </p>
+          <hr class="dark horizontal my-0">
+          <div class="card-footer p-3">
+            <p class="mb-0">Voir</p>
           </div>
-        </a>
-        <!-- Card -->
-      </div>
-
-      <div class="col-xl-4 col-md-6 mb-4 mb-xl-0">
-        <!-- Card -->
-        <a
-           class="
-                  d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="#"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-download fa-lg text-white fa-fw"></i>
-          </div>
-
-          <div class="ms-4">
-            <p class=" text-light mb-2">Visite</p>
-            <p class="mb-0">
-              <span class="h5 me-2">Lorem% </span>
-              <small class="text-success text-sm"
-                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
-                >
-            </p>
-          </div>
-        </a>
-        <!-- Card -->
-      </div>
-
-      <div class="col-xl-4 col-md-6 mb-4 mb-xl-0">
-        <!-- Card -->
-        <a
-           class="
-                  d-flex
-                  align-items-center
-                  p-4
-                  bg-dark
-                  shadow-4-strong
-                  rounded-6
-                  text-reset
-                  ripple
-                  "
-           href="#"
-           data-ripple-color="hsl(0, 0%, 75%)"
-           >
-          <div class="p-3 bg-theme rounded-4">
-            <i class="fas fa-envelope fa-lg text-white fa-fw"></i>
-          </div>
-
-          <div class="ms-4">
-            <p class=" text-light mb-2">mails</p>
-            <p class="mb-0">
-              <span class="h5 me-2">{{ mail }}</span>
-              <small class="text-success text-sm"
-                     ><i class="fas fa-arrow-down fa-sm me-1"></i>23,58%</small
-                >
-            </p>
-          </div>
-        </a>
-        <!-- Card -->
-      </div>
+        </div>
 
     </div>
   </section>
