@@ -27,4 +27,17 @@ class AdminController extends AbstractController
             "tag" => $secteur->getCount() + $categorie->getCount(),
         ]);
     }
+
+    #[Route('/base', name: 'dashboard')]
+    public function base(ClientRepository $client, ProjetRepository $projet, ClientImageRepository $clientImage, ProjetImageRepository $projetImage, EmailsRepository $emails, SecteurRepository $secteur, CategorieRepository $categorie): Response
+    {
+        return $this->render('AdminV2/base.twig', [
+            'controller_name' => 'AdminController',
+            'mail' => $emails->getCount(),
+            "client" => $client->getCount(),
+            "projet" => $projet->getCount(),
+            "image" => $clientImage->getCount() + $projetImage->getCount(),
+            "tag" => $secteur->getCount() + $categorie->getCount(),
+        ]);
+    }
 }
