@@ -26,7 +26,7 @@ class Secteur
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups("Projet")]
+    #[Groups(["Projet", "Client"])]
     private ?string $secteur = null;
 
     #[ORM\OneToMany(mappedBy: 'secteur', targetEntity: Projet::class)]

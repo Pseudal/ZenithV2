@@ -74,7 +74,17 @@ public function findByExampleField($value): array
         ->getResult()
     ;
 }
-
+public function findByExampleFieldArray($value): array
+{
+    return $this->createQueryBuilder('c')
+        ->andWhere('c.Client  = :val')
+        ->setParameter('val', $value)
+        ->orderBy('c.id', 'ASC')
+     //    ->setMaxResults(10)
+        ->getQuery()
+        ->getArrayResult();
+    ;
+}
 public function findLast(): array
 {
     return $this->createQueryBuilder('c')

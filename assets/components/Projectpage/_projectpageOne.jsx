@@ -4,8 +4,7 @@ import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 
 
-function ClientpageOne(data) {
-	
+function ProjectpageOne() {
 	AOS.init()
 		return (
 			<>
@@ -30,16 +29,13 @@ function ClientpageOne(data) {
 						<div className='container'>	
 
 						<div className="clientpageText" data-aos="fade-up">
-							<h1 className="medium marginStop clientDetail">{data.data.nomClient}</h1>
-							<h6 className="light marginStop clientDetail">{data.data.secteur.secteur}</h6>
-
-							{data.data.duree ? <p className="light clientDetail">DURÉE PROJET : {data.data.duree}</p> : <p className="light clientDetail">DURÉE PROJET : N/A</p>}
-
-							<p style={{display: "inline", textTransform: 'uppercase'}} className="light clientDetail2">{data.data.categorie[0].categorie}</p>
-							<p style={{display: "inline"}} className="light clientDetail2">   |   </p>
-							{data.data.categorie[1] && <p className="light clientDetail2" style={{display: "inline", textTransform: 'uppercase'}}>{data.data.categorie[1].categorie}</p>}
+							<h1 className="medium marginStop clientDetail">NOM CLIENT</h1>
+							<h6 className="light marginStop clientDetail">SECTEUR D’ACTIVITÉ</h6>
+							<p className="light clientDetail">DURÉE PROJET</p>
+							<p className="light clientDetail2">CATÉGORIE 1 | CATÉGORIE 2</p>
 						</div>
 						</div>
+
 						<div className="containerCenter3" data-aos="fade-up">
 							<h4 className="light letterSpacingS  discoverClient2">REINVENTER UNE IDENTITÉ <br /> DE MARQUE</h4>
 						</div>
@@ -58,7 +54,7 @@ function ClientpageOne(data) {
 		);
 	}
  
-export default ClientpageOne;
+export default ProjectpageOne;
 
 
 

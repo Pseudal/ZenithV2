@@ -26,7 +26,7 @@ class Categorie
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups("Projet")]
+    #[Groups(["Projet", "Client"])]
     private ?string $categorie = null;
 
     #[ORM\ManyToMany(targetEntity: Client::class, mappedBy: 'categorie')]
