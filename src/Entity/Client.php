@@ -19,6 +19,7 @@ use Vich\UploaderBundle\Mapping\Annotation\Uploadable;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
 #[ApiResource(
+    normalizationContext: ['groups' => ['Client']],
     collectionOperations: [
         "get",
     ],
@@ -35,13 +36,15 @@ class Client
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups("Projet")]
+    #[Groups(["Projet", "Client"])]
     private $nomClient;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups("Client")]
     private $logo;
 
     #[ORM\OneToMany(mappedBy: 'client', targetEntity: Projet::class)]
+    #[Groups("Client")]
     private $projet;
 
     #[ORM\OneToMany(mappedBy: 'Client', targetEntity: ClientImage::class, cascade: ["remove"])]
@@ -55,15 +58,19 @@ class Client
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $histoire = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $enjeu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $reponse = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $elementprecision = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -71,9 +78,11 @@ class Client
 
     #[ORM\ManyToOne(inversedBy: 'clients')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups("Client")]
     private ?Secteur $secteur = null;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'clients')]
+    #[Groups("Client")]
     private Collection $categorie;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
@@ -83,9 +92,11 @@ class Client
     private ?\DateTimeInterface $fin = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("Client")]
     private ?string $mission = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $duree = null;
 
     public function __construct()

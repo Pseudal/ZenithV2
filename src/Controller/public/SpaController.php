@@ -2,9 +2,14 @@
 
 namespace App\Controller\public;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ClientRepository;
+use App\Repository\ClientImageRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SpaController extends AbstractController
 {
@@ -24,3 +29,4 @@ class SpaController extends AbstractController
         ]);
     }
 }
+

@@ -4,18 +4,22 @@ import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 
 
-function ClientpageThree(data) {
+function ProjectpageThree() {
 	AOS.init()
 		return (
 			<>
 
 				<div className='wrapperDarkBlueClient'>
 					<div className='containerFlex'>
-						<img className='contain' src={"/images/imageclient/" + data.data.image} alt=""/>
+						<img className='contain' src="/zenith/images/7cA64Du.jpg" alt=""/>
 					</div>
 				</div>
+
+
+
+
 			</>
 		);
 	}
  
-export default ClientpageThree;
+export default ProjectpageThree;
