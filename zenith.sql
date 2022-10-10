@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 27 août 2022 à 22:35
+-- Généré le : lun. 10 oct. 2022 à 15:46
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.5
 
@@ -67,7 +67,7 @@ CREATE TABLE `chiffres` (
 --
 
 INSERT INTO `chiffres` (`id`, `collab`, `digital`, `photo`, `video`) VALUES
-(1, '500', '125', '752', '388');
+(1, '501', '125', '752', '388');
 
 -- --------------------------------------------------------
 
@@ -146,6 +146,18 @@ CREATE TABLE `client_image` (
   `imageprecision` tinyint(1) NOT NULL DEFAULT 0,
   `visible` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `client_image`
+--
+
+INSERT INTO `client_image` (`id`, `client_id`, `image`, `updated_at`, `header`, `secondaire`, `imageprecision`, `visible`) VALUES
+(1, 1, 'pexels-photo-2387793-6329ec3150b09992755041.jpeg', '2022-09-20 18:37:05', 1, 1, 0, 1),
+(2, 1, 'pexels-photo-12568038-6329ec32374ab297582939.webp', '2022-09-20 18:37:06', 0, 0, 1, 1),
+(3, 1, 'pexels-photo-11943277-6329ec3351881817319035.webp', '2022-09-20 18:37:07', 0, 0, 0, 1),
+(4, 1, 'pexels-photo-12666299-6329ec347420b299313361.jpeg', '2022-09-20 18:37:08', 0, 0, 0, 1),
+(5, 1, 'pexels-photo-12632089-6329ec3552e3c276656020.jpeg', '2022-09-20 18:37:09', 0, 0, 0, 1),
+(6, 1, 'pexels-photo-12488388-6329ec35d0ade086935286.jpeg', '2022-09-20 18:37:09', 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -560,7 +572,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT pour la table `client_image`
 --
 ALTER TABLE `client_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `custom_web_site_img`
