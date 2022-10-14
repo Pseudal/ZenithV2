@@ -54,7 +54,9 @@ function Action() {
 						</Swiper>
 
           		<h4 className="titreB light letterSpacing container center accroche" data-aos="fade-up" data-aos-duration="1000">AGIR ET RÉAGIR AVEC VOUS</h4>
-          		<button className="btnS center light letterSpacingM marginBottom2" data-aos="fade-up" data-aos-duration="1000">EN COMPRENDRE +</button>
+
+
+<link></link>          		<button className="btnS center light letterSpacingM marginBottom2" data-aos="fade-up" data-aos-duration="1000">EN COMPRENDRE +</button>
 							</div>
 
 
