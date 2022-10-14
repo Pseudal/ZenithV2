@@ -22,7 +22,7 @@ function Emotion() {
             		</div>
 								</div>
           		<h4 className="titreB light letterSpacing container center accroche" data-aos="fade-up" data-aos-duration="1000">SUSCITER L’EMOTION EN UN INSTANT</h4>
-          		<button className="marginBottom2 btnS center light letterSpacingM" data-aos="fade-up" data-aos-duration="1000">EN VOIR +</button>
+    <link></link>      		<button className="marginBottom2 btnS center light letterSpacingM" data-aos="fade-up" data-aos-duration="1000">EN VOIR +</button>
 							</div>
         		</div>
       		</div>
