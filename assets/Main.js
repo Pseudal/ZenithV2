@@ -6,6 +6,7 @@ import Workpage from './components/Workpage/_workpage';
 import ContactPage from './components/Contactpage/_contactpage';
 import ClientPage from './components/Clientpage/_clientpage';
 import { useLayoutEffect } from 'react'
+import Projectpage from './components/Projectpage/_projectpage';
 
 const Main = () => {
 
@@ -26,12 +27,8 @@ const Main = () => {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/projets" element={<Workpage />} />
           <Route exact path="/contact" element={<ContactPage />} />
-<<<<<<< Updated upstream
-          <Route exact path="/client" element={<ClientPage />} />
-=======
           <Route exact path="/client/:id" element={<ClientPage />} />
           <Route exact path="/projet/:id" element={<Projectpage />} />
->>>>>>> Stashed changes
 
         </Routes>
       </Wrapper>

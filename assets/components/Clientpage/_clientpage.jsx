@@ -5,25 +5,6 @@ import ClientpageThree from './_clientpageThree';
 import ClientpageFour from './_clientpageFour';
 import ClientpageFive from './_clientpageFive';
 import ClientpageSix from './_clientpageSix';
-<<<<<<< Updated upstream
-
-
-function Clientpage() {
-	return ( 
-		<>
-		<Navbar></Navbar>
-
-		
-		<ClientPageOne></ClientPageOne>
-		<ClientpageTwo></ClientpageTwo>
-		<ClientpageThree></ClientpageThree>
-		<ClientpageFour></ClientpageFour>
-		<ClientpageFive></ClientpageFive>
-		<ClientpageSix></ClientpageSix>
-		</>
-	 );
-}
-=======
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
@@ -138,6 +119,5 @@ function Clientpage() {
 			);
 		}
 	}
->>>>>>> Stashed changes
 
 export default Clientpage;

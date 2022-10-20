@@ -4,12 +4,8 @@ import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 
 
-<<<<<<< Updated upstream
-function ClientpageOne() {
-=======
 function ClientpageOne(data) {
 	console.log(data)
->>>>>>> Stashed changes
 	AOS.init()
 		return (
 			<>
