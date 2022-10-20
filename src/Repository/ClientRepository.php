@@ -72,12 +72,25 @@ class ClientRepository extends ServiceEntityRepository
         ->getArrayResult();
         ;
     }
+
     public function getCount()
-{
-    return $this->createQueryBuilder('c')
-    ->select('count(c.id)')
-    ->getQuery()
-    ->getSingleScalarResult();
-    ;
-}
+    {
+        return $this->createQueryBuilder('c')
+        ->select('count(c.id)')
+        ->getQuery()
+        ->getSingleScalarResult();
+        ;
+    }
+
+    public function findByExampleFieldArray($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->select("c.id", "c.nomClient", "c.mission")
+            ->andWhere('c.id  = :val')
+            ->setParameter('val', $value)
+        //    ->setMaxResults(10)
+            ->getQuery()
+            ->getArrayResult();
+        ;
+    }
 }

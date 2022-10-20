@@ -1,16 +1,7 @@
 import React from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Link } from "react-router-dom";
 
 
-<<<<<<< Updated upstream
-function ClientpageOne() {
-=======
-function ClientpageOne(data) {
-	console.log(data)
->>>>>>> Stashed changes
-	AOS.init()
+function ProjectpageOne(data) {
 		return (
 			<>
 
@@ -26,21 +17,26 @@ function ClientpageOne(data) {
 						<div className="container center2">
 			
 						<div className="containerCenter" data-aos="fade-up">
-							<Link to="/">
+							<a href="#" className="">
 								<img src="/zenith/images/bIO1r9F.png" alt="Logo" width={200} className="center" />
-							</Link>
+							</a>
 						</div>
 
 						<div className='container'>	
 
 						<div className="clientpageText" data-aos="fade-up">
-							<h1 className="medium marginStop clientDetail">NOM CLIENT</h1>
-							<h6 className="light marginStop clientDetail">SECTEUR D’ACTIVITÉ</h6>
-							<p className="light clientDetail">DURÉE PROJET</p>
-							<p className="light clientDetail2">CATÉGORIE 1 | CATÉGORIE 2</p>
-						</div>
-						</div>
+							<h1 className="medium marginStop clientDetail">{data.data.projet}</h1>
+							<h6 className="light marginStop clientDetail">{data.data.secteur.secteur}</h6>
+							{data.data.client ? <p className="light marginStop clientDetail">UN PROJET POUR : {data.data.client.nomClient}</p> :  <p className="light marginStop clientDetail">UN PROJET POUR : N/A</p>}
+							{data.data.duree ? <p className="light clientDetail">DURÉE PROJET : {data.data.duree}</p> : <p className="light clientDetail">DURÉE PROJET : N/A</p>}
+							
+							
 
+							<p style={{display: "inline", textTransform: 'uppercase'}} className="light clientDetail2">{data.data.categorie[0].categorie}</p>
+							<p style={{display: "inline"}} className="light clientDetail2">   |   </p>
+							{data.data.categorie[1] && <p className="light clientDetail2" style={{display: "inline", textTransform: 'uppercase'}}>{data.data.categorie[1].categorie}</p>}
+						</div>
+						</div>
 						<div className="containerCenter3" data-aos="fade-up">
 							<h4 style={{ textTransform: 'uppercase'}} className="light letterSpacingS  discoverClient2">{data.data.mission}</h4>
 						</div>
@@ -59,7 +55,7 @@ function ClientpageOne(data) {
 		);
 	}
  
-export default ClientpageOne;
+export default ProjectpageOne;
 
 
 

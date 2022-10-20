@@ -67,6 +67,7 @@ class Client
     private ?string $elementprecision = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $temoignage = null;
 
     #[ORM\ManyToOne(inversedBy: 'clients')]

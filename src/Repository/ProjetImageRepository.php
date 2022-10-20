@@ -120,4 +120,16 @@ public function getCount()
     ->getSingleScalarResult();
     ;
 }
+
+public function findByExampleFieldArray($value): array
+{
+    return $this->createQueryBuilder('c')
+        ->andWhere('c.projet  = :val')
+        ->setParameter('val', $value)
+        ->orderBy('c.id', 'ASC')
+     //    ->setMaxResults(10)
+        ->getQuery()
+        ->getArrayResult();
+    ;
+}
 }

@@ -88,5 +88,16 @@ class ProjetRepository extends ServiceEntityRepository
        ->getSingleScalarResult();
        ;
    }
+   public function findByExampleFieldArray($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->select("c.id", "c.projet", "c.mission")
+           ->andWhere('c.id  = :val')
+           ->setParameter('val', $value)
+       //    ->setMaxResults(10)
+           ->getQuery()
+           ->getArrayResult();
+       ;
+   }
 
 }

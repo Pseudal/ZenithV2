@@ -1,35 +1,16 @@
 import Navbar from '../_navbar';
-import ClientPageOne from "./_clientpageOne";
-import ClientpageTwo from './_clientpageTwo';
-import ClientpageThree from './_clientpageThree';
-import ClientpageFour from './_clientpageFour';
-import ClientpageFive from './_clientpageFive';
-import ClientpageSix from './_clientpageSix';
-<<<<<<< Updated upstream
-
-
-function Clientpage() {
-	return ( 
-		<>
-		<Navbar></Navbar>
-
-		
-		<ClientPageOne></ClientPageOne>
-		<ClientpageTwo></ClientpageTwo>
-		<ClientpageThree></ClientpageThree>
-		<ClientpageFour></ClientpageFour>
-		<ClientpageFive></ClientpageFive>
-		<ClientpageSix></ClientpageSix>
-		</>
-	 );
-}
-=======
+import ProjectPageOne from "./_projectpageOne";
+import ProjectpageTwo from './_projectpageTwo';
+import ProjectpageThree from './_projectpageThree';
+import ProjectpageFour from './_projectpageFour';
+import ProjectpageFive from './_projectpageFive';
+import ProjectpageSix from './_projectpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-function Clientpage() {
+function Projectpage() {
 	const { id } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -46,7 +27,7 @@ function Clientpage() {
 	const MySwal = withReactContent(Swal)
 	if(id){
 		useEffect(() => {
-			fetch(`/api/clients/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/api/projets/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -63,14 +44,16 @@ function Clientpage() {
 				}
 			)
 
-			fetch(`/getImagesClient/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/getImagesProjet/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
 				let thisRes = JSON.parse(result)
 				setIsLoadedImg(true);
 				setImages(JSON.parse(result));
+				
 				if(thisRes){
+					console.log(thisRes)
 					for(let i = 0; i < Object.keys(thisRes).length; i++){
 						if(thisRes[i].header)
 							setHeader(thisRes[i])
@@ -94,7 +77,8 @@ function Clientpage() {
 				console.log(error);
 				}
 			)
-			fetch(`/NexPrev/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+
+			fetch(`/NexPrevP/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -128,16 +112,17 @@ function Clientpage() {
 			return ( 
 				<>
 				<Navbar></Navbar>
-				<ClientPageOne data={items}></ClientPageOne>
-				<ClientpageTwo data={items}></ClientpageTwo>
-				<ClientpageThree data={second}></ClientpageThree>
-				<ClientpageFour preci={preci} data2={items}></ClientpageFour>
-				<ClientpageFive></ClientpageFive>
-				<ClientpageSix data={items} np={NextPrev}></ClientpageSix>
+
+				
+				<ProjectPageOne data={items}></ProjectPageOne>
+				<ProjectpageTwo data={items}></ProjectpageTwo>
+				<ProjectpageThree data={second}></ProjectpageThree>
+				<ProjectpageFour preci={preci} data2={items}></ProjectpageFour>
+				<ProjectpageFive></ProjectpageFive>
+				<ProjectpageSix data={items} np={NextPrev}></ProjectpageSix>
 				</>
 			);
 		}
 	}
->>>>>>> Stashed changes
-
-export default Clientpage;
+//
+export default Projectpage;
