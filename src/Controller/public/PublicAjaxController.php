@@ -29,6 +29,33 @@ class PublicAjaxController extends AbstractController
         }
         return new JsonResponse(false);    
     }
+    #[Route('/gettAllProject', name: 'gettAllProject', methods: ['GET'])]
+    public function gettAllProject(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    {
+        try {
+            $next = $client->getAll();
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($next);    
+    }
     #[Route('/getImagesProjet/{id}', name: 'getImagesProjet', methods: ['GET'])]
     public function getImagesProjet(ProjetImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response
     {
@@ -108,4 +135,5 @@ class PublicAjaxController extends AbstractController
         }
         return new JsonResponse(false);    
     }
+
 }
