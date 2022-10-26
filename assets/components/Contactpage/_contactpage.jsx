@@ -5,7 +5,7 @@ import LinesBottom from '../_linesBottom';
 import ContactPageOne from './_contactpageOne';
 
 //amodifier
-//<formik><formik
+//<formik><formik>
 
 function ContactPage() {
 	return ( 
