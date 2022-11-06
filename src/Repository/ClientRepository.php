@@ -93,4 +93,23 @@ class ClientRepository extends ServiceEntityRepository
             ->getArrayResult();
         ;
     }
+
+    public function getAll()
+    {
+        return $this->createQueryBuilder('c')
+         ->getQuery()
+         ->getArrayResult();
+    }
+
+    public function getSearch($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->select("c.id", "c.nomClient", "c.mission")
+            ->andWhere('c.nomClient LIKE :val OR c.mission LIKE :val')
+            ->setParameter('val', '%'.$value.'%')
+        //    ->setMaxResults(10)
+            ->getQuery()
+            ->getArrayResult();
+        ;
+    }
 }

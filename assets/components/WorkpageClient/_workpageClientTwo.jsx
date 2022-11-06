@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-function WorkpageTwo(data) {
+function WorkpageClientTwo(data) {
 	console.log(data)
 	let box = []
 	for (let index = 0; index < data.data.length; index++) {
 		if((index % 3 == 0) && (data.data[index + 2] && data.data[index + 1] && data.data[index])){
 			let item = (          		
 				<div className="container4 center" key={index}>
-					<a href={"/projet/" + data.data[index].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index].projet}</p><img src={"/images/imageprojet/" + data.data[index].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
-					<a href={"/projet/" + data.data[index + 1].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index + 1].projet}</p><img src={"/images/imageprojet/" + data.data[index + 1].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
-					<a href={"/projet/" + data.data[index + 2].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index + 2].projet}</p><img src={"/images/imageprojet/" + data.data[index + 2].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
+					<a href={"/client/" + data.data[index].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index].mission}</p><img src={"/images/imageclient/" + data.data[index].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
+					<a href={"/client/" + data.data[index + 1].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index + 1].mission}</p><img src={"/images/imageclient/" + data.data[index + 1].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
+					<a href={"/client/" + data.data[index + 2].id}><div className="boxWorkpage1"><p className="textDeco">{data.data[index + 2].mission}</p><img src={"/images/imageclient/" + data.data[index +2].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
 				</div>
 		  	)
 			box.push(item)
@@ -53,4 +53,4 @@ function WorkpageTwo(data) {
 		);
 	}
  
-export default WorkpageTwo;
+export default WorkpageClientTwo;

@@ -1,17 +1,14 @@
-import WorkpageOne from "./_workpageOne";
+import WorkpageClientOne from './_workpageClientOne';
 import Navbar from '../_navbar';
 import RsButton from '../_rsButton';
 import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
-import WorkpageTwo from "./_workpageTwo";
-import WorkpageThree from "./_workpageThree";
-import WorkpageFour from "./_workpageFour";
-import WorkpageFive from "./_workpageFive";
-import MiniFooter from "../Homepage/_miniFooter";
+import WorkpageClientTwo from './_workpageClientTwo';
+
 import { useEffect, useState } from "react";
 
 
-function Workpage() {
+function WorkpageClient() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isLoadedImg, setIsLoadedImg] = useState(false);
@@ -26,7 +23,7 @@ function Workpage() {
 	const [NextPrev, setNextPrev] = useState([]);
 		useEffect(() => {
 
-			fetch(`/gettAllProject/`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/gettAllClient/`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -56,8 +53,8 @@ function Workpage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<WorkpageOne></WorkpageOne>
-		<WorkpageTwo data={items}></WorkpageTwo>
+		<WorkpageClientOne></WorkpageClientOne>
+		<WorkpageClientTwo data={items}></WorkpageClientTwo>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>
@@ -66,4 +63,4 @@ function Workpage() {
 	 );
 }
 }
-export default Workpage;
+export default WorkpageClient;

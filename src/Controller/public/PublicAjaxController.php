@@ -56,6 +56,86 @@ class PublicAjaxController extends AbstractController
         }
         return new JsonResponse($next);    
     }
+    #[Route('/gettAllClient', name: 'gettAllClient', methods: ['GET'])]
+    public function gettAllClient(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response
+    {
+        try {
+            $next = $client->getAll();
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($next);    
+    }
+
+    #[Route('/getSearch/{search}', name: 'getSearch', methods: ['GET'])]
+    public function getSearch(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session,ProjetRepository $projet,ProjetImageRepository $projetImageRepository): Response
+    {
+        try {
+            
+            $search = [];
+            $next = $client->getSearch($request->get('search'));
+            $i = 0;
+         
+            foreach($next as $n){
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+            
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+                array_push($n, "client"); 
+                array_push($search, $n); 
+            }
+
+            $next2 = $projet->getSearch($request->get('search'));
+            $i = 0;
+
+            foreach($next2 as $n){
+                $getHeader = $projetImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+                array_push($n, "projet"); 
+                array_push($search, $n); 
+            }
+            //dd($search);
+        
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($search);    
+    }
+
     #[Route('/getImagesProjet/{id}', name: 'getImagesProjet', methods: ['GET'])]
     public function getImagesProjet(ProjetImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response
     {

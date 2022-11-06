@@ -1,17 +1,16 @@
-import WorkpageOne from "./_workpageOne";
+import SearchPageOne from "./_SearchPageOne";
 import Navbar from '../_navbar';
 import RsButton from '../_rsButton';
 import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
-import WorkpageTwo from "./_workpageTwo";
-import WorkpageThree from "./_workpageThree";
-import WorkpageFour from "./_workpageFour";
-import WorkpageFive from "./_workpageFive";
+import SearchPageTwo from "./_SearchPageTwo";
 import MiniFooter from "../Homepage/_miniFooter";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
-function Workpage() {
+function SearchPage() {
+	const { info } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isLoadedImg, setIsLoadedImg] = useState(false);
@@ -24,13 +23,15 @@ function Workpage() {
 	const [second, setSecond] = useState([]);
 	const [display, setDisplay] = useState([]);
 	const [NextPrev, setNextPrev] = useState([]);
+
 		useEffect(() => {
 
-			fetch(`/gettAllProject/`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/getSearch/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
 				setItems(result);
+				console.log(result);
 				setIsLoaded(true);
 				},
 				// Note: it's important to handle errors here
@@ -42,7 +43,9 @@ function Workpage() {
 				console.log(error);
 				}
 			)
-		}, [])
+		}, [])		
+
+
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
@@ -56,14 +59,14 @@ function Workpage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<WorkpageOne></WorkpageOne>
-		<WorkpageTwo data={items}></WorkpageTwo>
+		<SearchPageOne data = {info}></SearchPageOne>
+		<SearchPageTwo data={items}></SearchPageTwo>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
-		<WorkpageFive></WorkpageFive>
-		<MiniFooter></MiniFooter> */}
+		<WorkpageFive></WorkpageFive>*/}
+		<MiniFooter></MiniFooter> 
 		</>
 	 );
 }
 }
-export default Workpage;
+export default SearchPage;

@@ -100,4 +100,16 @@ class ProjetRepository extends ServiceEntityRepository
        ;
    }
 
+   public function getSearch($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->select("c.id", "c.projet", "c.mission")
+           ->andWhere('c.projet LIKE :val OR c.mission LIKE :val')
+           ->setParameter('val', '%'.$value.'%')
+       //    ->setMaxResults(10)
+           ->getQuery()
+           ->getArrayResult();
+       ;
+   }
+
 }
