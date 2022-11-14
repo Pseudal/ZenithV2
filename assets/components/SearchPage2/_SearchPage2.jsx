@@ -1,15 +1,15 @@
-import SearchPageOne from "./_SearchPageOne";
+import SearchPageOne2 from "./_SearchPageOne2";
 import Navbar from '../_navbar';
 import RsButton from '../_rsButton';
 import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
-import SearchPageTwo from "./_SearchPageTwo";
+import SearchPageTwo2 from "./_SearchPageTwo2";
 import MiniFooter from "../Homepage/_miniFooter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
-function SearchPage() {
+function SearchPage2() {
 	const { info } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -26,7 +26,7 @@ function SearchPage() {
 
 		useEffect(() => {
 			console.log(info)
-			fetch(`/getSearch/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/getSearchCat/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -59,8 +59,8 @@ function SearchPage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<SearchPageOne data = {info}></SearchPageOne>
-		<SearchPageTwo data={items}></SearchPageTwo>
+		<SearchPageOne2 data = {info}></SearchPageOne2>
+		<SearchPageTwo2 data={items}></SearchPageTwo2>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>*/}
@@ -69,4 +69,4 @@ function SearchPage() {
 	 );
 }
 }
-export default SearchPage;
+export default SearchPage2;

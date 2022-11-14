@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
 
 function ProjectpageOne(data) {
 		return (
@@ -32,9 +32,9 @@ function ProjectpageOne(data) {
 							
 							
 
-							<p style={{display: "inline", textTransform: 'uppercase'}} className="light clientDetail2">{data.data.categorie[0].categorie}</p>
+							<Link to={"/search/" + data.data.categorie[0].id}><p style={{display: "inline", textTransform: 'uppercase'}} className="light clientDetail2">{data.data.categorie[0].categorie}</p></Link>
 							<p style={{display: "inline"}} className="light clientDetail2">   |   </p>
-							{data.data.categorie[1] && <p className="light clientDetail2" style={{display: "inline", textTransform: 'uppercase'}}>{data.data.categorie[1].categorie}</p>}
+							{data.data.categorie[1] && <Link to={"/search/" + data.data.categorie[0].id}><p className="light clientDetail2" style={{display: "inline", textTransform: 'uppercase'}}>{data.data.categorie[1].categorie}</p></Link>}
 						</div>
 						</div>
 						<div className="containerCenter3" data-aos="fade-up">

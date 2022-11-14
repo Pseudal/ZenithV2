@@ -7,8 +7,6 @@ import ClientpageFive from './_clientpageFive';
 import ClientpageSix from './_clientpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
 function Clientpage() {
 	const { id } = useParams();
@@ -24,7 +22,6 @@ function Clientpage() {
 	const [second, setSecond] = useState([]);
 	const [display, setDisplay] = useState([]);
 	const [NextPrev, setNextPrev] = useState([]);
-	const MySwal = withReactContent(Swal)
 	if(id){
 		useEffect(() => {
 			fetch(`/api/clients/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})

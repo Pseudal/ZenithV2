@@ -7,8 +7,6 @@ import ProjectpageFive from './_projectpageFive';
 import ProjectpageSix from './_projectpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
 function Projectpage() {
 	const { id } = useParams();
@@ -24,7 +22,6 @@ function Projectpage() {
 	const [second, setSecond] = useState([]);
 	const [display, setDisplay] = useState([]);
 	const [NextPrev, setNextPrev] = useState([]);
-	const MySwal = withReactContent(Swal)
 	if(id){
 		useEffect(() => {
 			fetch(`/api/projets/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})

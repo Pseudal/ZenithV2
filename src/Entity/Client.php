@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 //use App\Entity\TagClient;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 use App\Repository\ClientRepository;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\Common\Collections\Collection;
@@ -75,6 +76,7 @@ class Client
     private ?Secteur $secteur = null;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'clients')]
+    #[JoinTable(name: 'cat_tag')]
     private Collection $categorie;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
