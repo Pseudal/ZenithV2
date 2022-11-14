@@ -72,4 +72,15 @@ class CategorieRepository extends ServiceEntityRepository
        ->getSingleScalarResult();
        ;
    }
+
+   public function FindByCat($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.id  = :val')
+           ->setParameter('val', $value)
+       //    ->setMaxResults(10)
+           ->getQuery()
+           ->getArrayResult();
+       ;
+   }
 }
