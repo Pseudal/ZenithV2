@@ -63,6 +63,14 @@ function ContactPageOne() {
 		);
 	}
  
+//modifier a partir de la ligne 
+// ajouter <form> <field> etc
+// function contact pageOne ne fait rien ne declare rien etc.. 
+//deifinir un etat d origine pour les zone de texte 
+//ajouter un button quand clique prend les information dans les champs 
+
+
+
 export default ContactPageOne;
 
 
