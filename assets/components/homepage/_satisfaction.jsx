@@ -1,6 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Satisfaction() {
+	const [error, setError] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [items, setItems] = useState([]);
+  
+	// Remarque : le tableau vide de dépendances [] indique
+	// que useEffect ne s’exécutera qu’une fois, un peu comme
+	// componentDidMount()
+	useEffect(() => {
+	  fetch("/api/clients")
+		.then(res => res.json())
+		.then(
+		  (result) => {
+			setIsLoaded(true);
+			setItems(result["hydra:member"]);
+		  },
+		  // Remarque : il faut gérer les erreurs ici plutôt que dans
+		  // un bloc catch() afin que nous n’avalions pas les exceptions
+		  // dues à de véritables bugs dans les composants.
+		  (error) => {
+			setIsLoaded(true);
+			setError(error);
+		  }
+		)
+	}, [])
+  
+	if (error) {
+	  return <div>Erreur : {error.message}</div>;
+	} else if (!isLoaded) {
+	  return <div>Chargement...</div>;
+	} else {
+    console.log(items);
 		return (
 			<>
       <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">
@@ -17,9 +48,9 @@ function Satisfaction() {
           <h6 className="titreCenter light letterSpacingS paddingBottom" data-aos="fade-up" data-aos-duration="1000">DES HISTOIRES HUMAINES, EXCEPTIONNELLES, ORIGINALES.</h6>
           
           <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={120} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={120} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={120} /></div>
             <div className="boxXS"></div>
             <div className="boxXS"></div>
             <div className="boxXS"></div>
@@ -74,6 +105,6 @@ function Satisfaction() {
 			</>
 		);
 	}
-
+}
  
 export default Satisfaction;

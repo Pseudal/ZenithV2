@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 function Footer() {
+	const [values, setValues] = useState({
+		email: '',
+	});
+
+	const handleEmailInputChange = (event) => {
+		event.persist();
+		setValues((values) => ({
+			...values,
+			email: event.target.value,
+			
+		}));
+		console.log(values.email)
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ "email": values.email, "new": true }),
+		};
+		fetch('/api/emails', requestOptions)
+			.then(response => response.json())
+	};
 		return (
 			<>
 				<div style={{backgroundImage: "url(/zenith/images/W0L2wTw.jpg)"}} className="demiblocFooter" alt="footer">
@@ -30,12 +54,17 @@ function Footer() {
       						<a className="fb2" href='https://www.facebook.com/AGENCEZENITH/'></a>
       						<a className="insta2" href='https://www.instagram.com/agencezenith/?hl=fr'></a>
       						<a className="linkedin2" href='https://www.linkedin.com/company/agence-zenith/'></a>
-    						</div>
+							  </div>
+								<form onSubmit={handleSubmit} >
 									<h4 className="titreD medium letterSpacing marginBottom ">NEWSLETTER</h4>
-									<div className="rs2 centerFlex center">
-									<input className="inputMail center" type="email" id="email" pattern=".+@globex\.com" size="30" required></input>
-									<button className='btnSM'>ENVOYER</button>
-									</div>
+									<input className="inputMail center"
+									type="email" 
+									id="email" 
+									size="30" name="email" 
+									value={values.email}
+									onChange={handleEmailInputChange}
+									required></input>
+								</form>
 							</div>
 
 							<div className="divE">

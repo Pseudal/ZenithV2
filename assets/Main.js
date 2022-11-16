@@ -34,7 +34,7 @@ const Main = () => {
           <Route exact path="/client/:id" element={<ClientPage />} />
           <Route exact path="/projet/:id" element={<Projectpage />} />
           <Route exact path="/search/:info" element={<SearchPage />} />
-          <Route exact path="/searchCat/:info" element={<SearchPage2 />} />
+          <Route exact path="/searchcat/:info/:name" element={<SearchPage2 />} />
         </Routes>
       </Wrapper>
     </BrowserRouter>
