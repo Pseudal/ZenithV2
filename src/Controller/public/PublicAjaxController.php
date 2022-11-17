@@ -10,16 +10,48 @@ use App\Repository\CategorieRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ClientImageRepository;
 use App\Repository\ProjetImageRepository;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PublicAjaxController extends AbstractController
 {
+    #[Route('/sendemail', name: 'sendEmail', methods: ['GET', 'POST'])]
+    public function sendEmail(Request $request,Session $session): Response
+    {
+        $r = json_decode($request->getContent(), true);
+        $filesystem = new Filesystem();
+        try {
+            $new_file_path = "Email.txt";
+         
+            if (!$filesystem->exists($new_file_path))
+            {
+                $filesystem->touch($new_file_path);
+                $filesystem->chmod($new_file_path, 0777);
+                $filesystem->dumpFile($new_file_path, $r['name']."\n");
+                $filesystem->appendToFile($new_file_path, $r['email']."\n");
+                $filesystem->appendToFile($new_file_path, $r['message']."\n");
+                // $filesystem->dumpFile($new_file_path, "Adding dummy content to bar.txt file.\n");
+                // $filesystem->appendToFile($new_file_path, "TTTTTTEEEEEEESSSSSSSSTTTTTT.\n");
+            }else{
+                // $filesystem->dumpFile($new_file_path, "marche\n");
+                // $filesystem->dumpFile($new_file_path, json_encode($r));
+                $filesystem->dumpFile($new_file_path, $r['name']."\n");
+                $filesystem->appendToFile($new_file_path, $r['email']."\n");
+                $filesystem->appendToFile($new_file_path, $r['message']."\n");
+            }
+        } catch (IOExceptionInterface $exception) {
+            echo "Error creating file at". $exception->getPath();
+        }
+        return new JsonResponse("reçu"); 
+    }
+
     #[Route('/getImagesClient/{id}', name: 'getImagesClient', methods: ['GET'])]
     public function getImagesClient(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response
     {
