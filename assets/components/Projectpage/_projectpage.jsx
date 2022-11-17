@@ -30,7 +30,7 @@ function Projectpage() {
 				(result) => {
 				setIsLoaded(true);
 				setItems(result);
-				console.log(result);
+
 				},
 				// Note: it's important to handle errors here
 				// instead of a catch() block so that we don't swallow
@@ -44,14 +44,18 @@ function Projectpage() {
 			fetch(`/getImagesProjet/${id}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
-				(result) => {
-				let thisRes = JSON.parse(result)
+				(resultimg) => {
+				let thisRes = JSON.parse(resultimg)
 				setIsLoadedImg(true);
-				setImages(JSON.parse(result));
-				
+				setImages(JSON.parse(resultimg));
+				if( thisRes == "[]" || thisRes.length == 0){
+					setImgReady(true)
+					return
+				}
 				if(thisRes){
-					console.log(thisRes)
-					for(let i = 0; i < Object.keys(thisRes).length; i++){
+					for(let i = 0; i < thisRes.length; i++){
+						console.log(thisRes[i])
+						console.log(i)
 						if(thisRes[i].header)
 							setHeader(thisRes[i])
 						if(thisRes[i].focus)
@@ -60,8 +64,10 @@ function Projectpage() {
 							setSecond(thisRes[i])
 						// if(images[i].visible)
 						// 	setDisplay(...images[i])
-						if(Object.keys(thisRes).length-1 == i || result == "[]")
+						if(thisRes.length-1 == i){
 							setImgReady(true)
+						}
+							
 					}
 				}
 				},
@@ -103,7 +109,7 @@ function Projectpage() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded && !isImgReady && !isLoadedNextPrev) {
+	  } else if (!isLoaded || !isImgReady || !isLoadedNextPrev) {
 		return <div>Loading...</div>;
 	  } else {
 			return ( 

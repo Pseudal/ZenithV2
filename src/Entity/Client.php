@@ -76,7 +76,6 @@ class Client
     private ?Secteur $secteur = null;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'clients')]
-    #[JoinTable(name: 'cat_tag')]
     private Collection $categorie;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]

@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 
 function SearchPage2() {
 	const { info } = useParams();
+	const { name } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isLoadedImg, setIsLoadedImg] = useState(false);
@@ -25,8 +26,8 @@ function SearchPage2() {
 	const [NextPrev, setNextPrev] = useState([]);
 
 		useEffect(() => {
-			console.log(info)
-			fetch(`/getSearchCat/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+
+			fetch(`/getsearchcat/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -59,7 +60,7 @@ function SearchPage2() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<SearchPageOne2 data = {info}></SearchPageOne2>
+		<SearchPageOne2 data = {name}></SearchPageOne2>
 		<SearchPageTwo2 data={items}></SearchPageTwo2>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
