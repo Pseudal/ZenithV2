@@ -13,7 +13,7 @@ function Instaflux() {
           
           <div className="containerCenterFlex" id='Insta'>
             
-          <div className="Rectangle1"></div>
+          <div className="Rectangle1" ></div>
           <div className="Rectangle2"></div>
           <div className="Rectangle3"></div>
           <div><p className="IMAGINER" data-aos="fade-up" data-aos-duration="1000">IMAGINER</p></div>

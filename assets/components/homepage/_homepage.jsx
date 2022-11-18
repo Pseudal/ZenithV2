@@ -6,7 +6,7 @@ function Homepage() {
 	AOS.init()
 		return (
 			<>
-			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="homepage">
+			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="homepage" >
 
 				<video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
