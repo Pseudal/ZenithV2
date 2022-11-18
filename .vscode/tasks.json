@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev-server",
+			"path": "ZenithV2",
+			"problemMatcher": [
+				"$lessc"
+			],
+			"label": "npm: dev-server - ZenithV2",
+			"detail": "encore dev-server"
+		}
+	]
+}
