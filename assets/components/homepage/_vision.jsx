@@ -31,6 +31,7 @@ function Vision()  {
                   <div className="parent3">
 
                       <div className="visionBox">
+                        <img style={{width: '100%', height: '100%', objectFit: 'cover'}}src="https://static.wixstatic.com/media/94b255_74885d374cf84214899c9df60d653638~mv2.jpg/v1/fill/w_284,h_371,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/AVATAR%20RON%20B.jpg" alt="" />
                       </div>
 
                       <ul>
@@ -53,6 +54,7 @@ function Vision()  {
                   <div className="parent3">
 
                       <div className="visionBox">
+                        <img style={{width: '100%', height: '100%', objectFit: 'cover'}}src="https://static.wixstatic.com/media/bb5e3b_a105239bfd1848b4892939d8798cd657~mv2.jpg/v1/crop/x_109,y_0,w_734,h_900/fill/w_270,h_348,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/bb5e3b_a105239bfd1848b4892939d8798cd657~mv2.jpg" alt="" />
                       </div>
 
                       <ul>

@@ -28,7 +28,7 @@ function Footer() {
 	};
 		return (
 			<>
-				<div style={{backgroundImage: "url(/zenith/images/W0L2wTw.jpg)"}} className="demiblocFooter" alt="footer">
+				<div id="footer" style={{backgroundImage: "url(/zenith/images/W0L2wTw.jpg)"}} className="demiblocFooter" alt="footer">
       		        <div className="demibloc2">
 						<div className="emptyS"></div>
 						<h2 className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
