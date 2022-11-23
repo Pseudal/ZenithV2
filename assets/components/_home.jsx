@@ -76,7 +76,7 @@ function Home() {
 		<LinesBottom></LinesBottom>
 		<RsButton></RsButton>
 		
-		<Parallax bgImage="https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg" blur={{ min: -1, max: 3 }} strength={1000}>
+		<Parallax bgImage="https://images.pexels.com/photos/14377845/pexels-photo-14377845.jpeg" blur={{ min: -1, max: 3 }} strength={1000}>
 
 			<Element name="scroll-to-element1" className="element">			
 				<div data-aos="zoom-in"data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
@@ -136,7 +136,7 @@ function Home() {
 
 
 		</Parallax>
-		<Element name="scroll-to-element10" className="element"></Element>
+		{/* <Element name="scroll-to-element10" className="element"></Element> */}
 		</>
 	);
 }

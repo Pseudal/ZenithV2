@@ -11,7 +11,7 @@ function Emotion() {
         {/* <video playsInline autoPlay muted loop>
           <source src="/zenith/video/videobg2.mp4" type="video/mp4"></source>
         </video> */}
-        <div className="opacityBlue" style={{paddingTop: '80px'}}>
+        <div className="opacityBlue" style={{paddingTop: '60px'}}>
         <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">  
           <div className="wrapper2">
             <div className="container2 ">
