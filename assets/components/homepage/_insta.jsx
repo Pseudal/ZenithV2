@@ -3,11 +3,12 @@ import React from 'react'
 function Instaflux() {
 		return (
 			<>
-			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="#agencezenith">
+			{/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="#agencezenith">
       <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg8.mp4" type="video/mp4"></source>
-				</video>
-      <div className="opacityBlue">
+				</video> */}
+      <div className="opacityBlue" style={{paddingTop: '15px'}}>
+      <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
         <div className="wrapper2">
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">#AGENCEZENITH</h1>
           

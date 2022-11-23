@@ -1,16 +1,17 @@
 import React from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Element } from 'react-scroll';
 
 function Homepage() {
 	AOS.init()
 		return (
 			<>
-			<div  style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="homepage" >
+			{/* <div  style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="homepage" > */}
 
-				<video playsInline autoPlay muted loop>
+				{/* <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
-				</video> 
+				</video>  */}
 
 				<div className="opacityBlue">
 					<div className="wrapper">
@@ -24,10 +25,12 @@ function Homepage() {
 						</div>
 
 						<div className="line" data-aos="fade-up" data-aos-duration="800"></div>
+						<Element name="scroll-to-element2" className="element"></Element>
 						</div>
 					</div>
 				</div>
-			</div>
+				
+			{/* </div> */}
 			</>
 		);
 	}

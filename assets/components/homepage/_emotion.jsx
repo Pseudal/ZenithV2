@@ -3,15 +3,16 @@ import React from "react";
 function Emotion() {
   return (
     <>
-      <div
+      {/* <div
         style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
         className="background"
         alt="émotion"
-      >
-        <video playsInline autoPlay muted loop>
+      > */}
+        {/* <video playsInline autoPlay muted loop>
           <source src="/zenith/video/videobg2.mp4" type="video/mp4"></source>
-        </video>
-        <div className="opacityBlue">
+        </video> */}
+        <div className="opacityBlue" style={{paddingTop: '80px'}}>
+        <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">  
           <div className="wrapper2">
             <div className="container2 ">
               <h1

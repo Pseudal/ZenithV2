@@ -1,69 +1,128 @@
-import React from 'react'
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
-
+import { Element } from "react-scroll";
 
 function Action() {
-		return (
-			<>
-				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="action">
-      		<div className="opacityBlue">
-        		<div className="wrapper2">
-							<div className="container2" data-aos="fade-up" data-aos-duration="1000">
+  return (
+    <>
+      {/* <div
+        style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
+        className="background"
+        alt="action"
+      > */}
+        <div
+		 className="opacityBlue"
+		 style={{paddingTop: '80px'}}
+		 >
+          <div className="wrapper2">
+            <div
+              className="container2"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <h1
+                className="titreA medium letterSpacing marginStop"
+				id="patchnaze"
+              >
+                ACTION
+              </h1>
+              <h6
+                className="light letterSpacingS sousTitre"
+              >
+                SE CONCENTRER SUR L’ESSENTIEL : VOUS
+              </h6>
 
-          		<h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">ACTION</h1>
-          		<h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">SE CONCENTRER SUR L’ESSENTIEL : VOUS</h6>
+              <Swiper slidesPerView={3} spaceBetween={-100} className="swiper">
+                <SwiperSlide>
+                  <Link to="/projets" className="textDeco">
+                    <div className="boxCarre">
+                      <p className="textAction1 letterSpacingS ">
+                        CONSEIL
+                        <br />
+                        <br />
+                        <span className="light">
+                          ACCOMPAGNEMENT
+                          <br />
+                          360°
+                        </span>
+                      </p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
 
-						<Swiper
-						slidesPerView={3}
-						spaceBetween={-100}
-						className="swiper"
-						>
-							<SwiperSlide>
-								<Link to="/projets" className="textDeco">
-									<div className="boxCarre">
-										<p className="textAction1 letterSpacingS ">CONSEIL<br /><br /><span className="light">ACCOMPAGNEMENT<br />360°</span></p>
-									</div>
-								</Link>
-							</SwiperSlide>
-							
-							<SwiperSlide>
-									<div className="boxCarre">
-								<Link to="/projets" className="textDeco">
-									<p className="textAction1 letterSpacingS ">COMMUNICATION<br /><br /><span className="light">SOLUTION<br />SUR-MESURE</span></p>
-								</Link>
-									</div>
-							</SwiperSlide>
+                <SwiperSlide>
+                  <div className="boxCarre">
+                    <Link to="/projets" className="textDeco">
+                      <p className="textAction1 letterSpacingS ">
+                        COMMUNICATION
+                        <br />
+                        <br />
+                        <span className="light">
+                          SOLUTION
+                          <br />
+                          SUR-MESURE
+                        </span>
+                      </p>
+                    </Link>
+                  </div>
+                </SwiperSlide>
 
-							<SwiperSlide>
-									<div className="boxCarre">
-								<Link to="/projets" className="textDeco">
-									<p className="textAction1 letterSpacingS ">EVENT<br /><br /><span className="light">LIVRAISON<br />CLÉS EN MAIN</span></p>
-								</Link>
-									</div>
-							</SwiperSlide>
+                <SwiperSlide>
+                  <div className="boxCarre">
+                    <Link to="/projets" className="textDeco">
+                      <p className="textAction1 letterSpacingS ">
+                        EVENT
+                        <br />
+                        <br />
+                        <span className="light">
+                          LIVRAISON
+                          <br />
+                          CLÉS EN MAIN
+                        </span>
+                      </p>
+                    </Link>
+                  </div>
+                </SwiperSlide>
 
-							<SwiperSlide>
-								<Link to="/projets" className="textDeco">
-									<div className="boxCarre">
-										<p className="textAction1 letterSpacingS ">CONSEIL<br /><br /><span className="light">ACCOMPAGNEMENT<br />360°</span></p>
-									</div>
-								</Link>
-							</SwiperSlide>
+                <SwiperSlide>
+                  <Link to="/projets" className="textDeco">
+                    <div className="boxCarre">
+                      <p className="textAction1 letterSpacingS ">
+                        CONSEIL
+                        <br />
+                        <br />
+                        <span className="light">
+                          ACCOMPAGNEMENT
+                          <br />
+                          360°
+                        </span>
+                      </p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              </Swiper>
 
-						</Swiper>
+              <h4
+                className="titreB light letterSpacing container center accroche"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                AGIR ET RÉAGIR AVEC VOUS
+              </h4>
+              <button
+                className="btnS center light letterSpacingM marginBottom2"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                EN COMPRENDRE +
+              </button>
+            </div>
+          </div>
+        </div>
+      {/* </div> */}
+    </>
+  );
+}
 
-          		<h4 className="titreB light letterSpacing container center accroche" data-aos="fade-up" data-aos-duration="1000">AGIR ET RÉAGIR AVEC VOUS</h4>
-          		<button className="btnS center light letterSpacingM marginBottom2" data-aos="fade-up" data-aos-duration="1000">EN COMPRENDRE +</button>
-							</div>
-
-
-        		</div>
-      		</div>
-    		</div>
-			</>
-		);
-	}
-
- 
 export default Action;

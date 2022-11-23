@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import { Element } from 'react-scroll';
 
 function Footer() {
 	const [values, setValues] = useState({
@@ -28,7 +29,7 @@ function Footer() {
 	};
 		return (
 			<>
-				<div id="footer" style={{backgroundImage: "url(/zenith/images/W0L2wTw.jpg)"}} className="demiblocFooter" alt="footer">
+				<div id="footer" className="demiblocFooter" alt="footer">
       		        <div className="demibloc2">
 						<div className="emptyS"></div>
 						<h2 className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
@@ -39,8 +40,8 @@ function Footer() {
 
 					</div>
 				</div>
-
-				<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="demiblocFooter2" alt="footer">
+				<Element name="scroll-to-element9" className="element"></Element>
+				<div className="demiblocFooter2" alt="footer">
 					<div className="demibloc2">
 						<div className="parent4">
 							<div className="divC">

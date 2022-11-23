@@ -10,10 +10,11 @@ function Vision()  {
       {/* <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg6.mp4" type="video/mp4"></source>
 				</video> */}
-      <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='background'>
+      {/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='background'> */}
 
 
-      <div className="opacityBlue">
+      <div className="opacityBlue" style={{paddingTop: '80px'}}>
+      <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
         <div className="wrapper">
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">VISION</h1>
           <h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">LA RENCONTRE QUI CHANGE TOUT</h6>

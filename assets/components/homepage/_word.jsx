@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Element } from "react-scroll";
 import { useSpring, animated } from 'react-spring'
 import "swiper/css";
 
@@ -34,15 +35,16 @@ const Wordpage = ({  }) => {
   return (
     <>
       <div
-        style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
+        //style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
         className="demibloc"
         alt="wordpage"
       >
         <video playsInline autoPlay muted loop>
-          <source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
+          {/* <source src="/zenith/video/videobg4.mp4" type="video/mp4"></source> */}
         </video>
 
-        <div className="demibloc2" alt="Liste de mots">
+        <div className="opacityBlue" alt="Liste de mots">
+          <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
           <div className="parent">
             <h1 className="wordpage light  grid1" id="wordpage">
               RÉACTIVITÉ
@@ -62,7 +64,6 @@ const Wordpage = ({  }) => {
             <h1 onMouseOver={scrollingxY} className="wordpage normal  grid7">
               STRATÉGIE
             </h1>
-
             <h1 onMouseOver={scrollingY} className="wordpage normal  grid9">
               COMMUNICATION
             </h1>
@@ -105,6 +106,7 @@ const Wordpage = ({  }) => {
             </h1>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
