@@ -13,7 +13,7 @@ function Action() {
       > */}
         <div
 		 className="opacityBlue"
-		 style={{paddingTop: '80px'}}
+		 style={{paddingTop: '30px'}}
 		 >
           <div className="wrapper2">
             <div
@@ -35,9 +35,10 @@ function Action() {
 
               <Swiper slidesPerView={3} spaceBetween={-100} className="swiper">
                 <SwiperSlide>
-                  <Link to="/projets" className="textDeco">
-                    <div className="boxCarre">
-                      <p className="textAction1 letterSpacingS ">
+                  <Link to="/projets" className="textDeco" >
+                    <div className="boxCarre" style={{backgroundImage: "url(https://www.businessmarches.com/wp-content/uploads/2015/11/shutterstock_195467156.jpg)"}}>
+                      <div style={{ width: '100%', height: '100%', backdropFilter: 'blur(5px)'}}>
+                      <p className="textAction1 letterSpacingS " >
                         CONSEIL
                         <br />
                         <br />
@@ -47,13 +48,16 @@ function Action() {
                           360°
                         </span>
                       </p>
-                    </div>
+                      </div>
+                      </div>
                   </Link>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="boxCarre">
+
                     <Link to="/projets" className="textDeco">
+                    <div className="boxCarre" style={{backgroundImage: "url(https://www.businessmarches.com/wp-content/uploads/2015/11/shutterstock_195467156.jpg)"}}>
+                      <div style={{ width: '100%', height: '100%', backdropFilter: 'blur(5px)'}}>
                       <p className="textAction1 letterSpacingS ">
                         COMMUNICATION
                         <br />
@@ -64,13 +68,15 @@ function Action() {
                           SUR-MESURE
                         </span>
                       </p>
-                    </Link>
                   </div>
+                  </div>
+                    </Link>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="boxCarre">
                     <Link to="/projets" className="textDeco">
+                    <div className="boxCarre" style={{backgroundImage: "url(https://www.businessmarches.com/wp-content/uploads/2015/11/shutterstock_195467156.jpg)"}}>
+                      <div style={{ width: '100%', height: '100%', backdropFilter: 'blur(5px)'}}>
                       <p className="textAction1 letterSpacingS ">
                         EVENT
                         <br />
@@ -81,8 +87,9 @@ function Action() {
                           CLÉS EN MAIN
                         </span>
                       </p>
-                    </Link>
+                      </div>
                   </div>
+                    </Link>
                 </SwiperSlide>
 
                 <SwiperSlide>
@@ -112,8 +119,6 @@ function Action() {
               </h4>
               <button
                 className="btnS center light letterSpacingM marginBottom2"
-                data-aos="fade-up"
-                data-aos-duration="1000"
               >
                 EN COMPRENDRE +
               </button>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 //import scrollIntoView from 'scroll-into-view-if-needed'
@@ -23,9 +23,10 @@ import 'aos/dist/aos.css';
 
 
 function Home() {
+	let step = 1
+
 	AOS.init()
 	let scroll = false
-	let step =1
 	if(step == 4){
 		document.querySelector('.patchnaze').style.paddingTop = '0px'
 	}

@@ -13,7 +13,7 @@ function Creation() {
 					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
 				</video> */}
       {/* <Element name="scroll-to-element4" className="element"></Element> */}
-      <div className="opacityBlue" style={{paddingTop: '90px'}}>
+      <div className="opacityBlue" style={{paddingTop: '40px'}}>
         <div
           data-aos="zoom-in"
           data-aos-mirror=""
@@ -37,6 +37,7 @@ function Creation() {
             </h6>
 
             <Swiper
+            style={{height: '500px'}}
               slidesPerView={1}
               centeredSlides={true}
               spaceBetween={0}
@@ -50,8 +51,8 @@ function Creation() {
                   spaceBetween: 40,
                 },
                 1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 50,
+                  slidesPerView: 6,
+                  spaceBetween: 1,
                 },
               }}
               className="swiper2"
@@ -83,23 +84,22 @@ function Creation() {
                 <div className="boxCréation">8</div>
               </SwiperSlide>
             </Swiper>
-
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000">
             <h4
               className="titreB light letterSpacing container center accroche"
-              data-aos="fade-up"
-              data-aos-duration="1000"
             >
               PROPULSER L’IMAGINAIRE PLUS LOIN
             </h4>
             <button
               className="marginBottom2 btnS center light letterSpacingM"
-              data-aos="fade-up"
-              data-aos-duration="1000"
             >
               <Link to="/projets" className="textDeco">
                 DÉCOUVRIR
               </Link>
             </button>
+            </div>
           </div>
         </div>
       </div>

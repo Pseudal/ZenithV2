@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Instaflux() {
+
 		return (
 			<>
 			{/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="#agencezenith">
