@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 
 
+
 function ContactPageOne() {
 	const [values, setValues] = useState({
 		email: '',
@@ -95,7 +96,10 @@ function ContactPageOne() {
 										<label for="name" class="form__label">Votre besoin</label>
 
 									</div>
-									
+                                <button >    envoyer </button>  
+
+
+
 									<input type="submit" className="textDeco" value="Submit"/>
 								</form>
 							</div>
