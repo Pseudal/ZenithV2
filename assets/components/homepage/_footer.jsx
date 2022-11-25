@@ -30,9 +30,9 @@ function Footer() {
 		return (
 			<>
 				<div id="footer" className="demiblocFooter" alt="footer">
-      		        <div className="demibloc2">
+      		        <div className="demibloc2" >
 						<div className="emptyS"></div>
-						<h2 className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
+						<h2  className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
 						<button className="btnL center light letterSpacingM">
 							<Link to="/contact" className="textDeco">CONTACT</Link>
 						</button>
