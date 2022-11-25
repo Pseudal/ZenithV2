@@ -72,13 +72,17 @@ function ContactPageOne() {
 									<h6 className="light">Présentez votre projet et laissez-nous vos
 									informations de contact. Nous reviendrons vers
 									vous dans un délai de 24h.</h6>
-								</div>
+								</div>		
+								
+
 								<form onSubmit={handleSubmit}>
 									<div class="form__group field  divC1">
-										<input type="input" class="form__field" placeholder="Name" name="name" id='name' value={values.name}onChange={handleInputChange} required></input>
+										<input type="input" class="form__field" placeholder="Name" name="name" id='name'
+										 value={values.name}onChange={handleInputChange} required></input>
 										<label for="name" class="form__label">Votre nom</label>
 
 									</div>
+									
 
 									<div class="form__group2 field divC2">
 										<input type="input" class="form__field" placeholder="email" name="email" id='email' value={values.email} onChange={handleInputChange} required />
@@ -91,6 +95,7 @@ function ContactPageOne() {
 										<label for="name" class="form__label">Votre besoin</label>
 
 									</div>
+									
 									<input type="submit" className="textDeco" value="Submit"/>
 								</form>
 							</div>
@@ -105,11 +110,6 @@ function ContactPageOne() {
 		);
 	}
  
-//modifier a partir de la ligne 
-// ajouter <form> <field> etc
-// function contact pageOne ne fait rien ne declare rien etc.. 
-//deifinir un etat d origine pour les zone de texte 
-//ajouter un button quand clique prend les information dans les champs 
 
 
 

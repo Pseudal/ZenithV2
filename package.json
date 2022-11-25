@@ -22,9 +22,11 @@
     "dependencies": {
         "aos": "^2.3.4",
         "ckeditor4": "^4.13.0",
+        "framer-motion": "^7.6.12",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-intersection-observer": "^9.4.1",
         "react-router-dom": "^6.3.0",
         "react-spring": "^9.5.5",
         "scroll-into-view-if-needed": "^2.2.29",
