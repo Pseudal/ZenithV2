@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Element } from "react-scroll";
+import { Parallax } from 'react-parallax';
 
-function Creation() {
+function Creation(item) {
+  console.log(item);
+  function BlurDetail(e){
+    console.log(e)
+    e.target.style.backdropFilter = "blur(4px)";
+  }
+  function RemoveBlurDetail(e){
+    console.log(e)
+    e.target.style.backdropFilter = "blur(0)";
+  }
   return (
     <>
       {/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">
@@ -13,6 +23,8 @@ function Creation() {
 					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
 				</video> */}
       {/* <Element name="scroll-to-element4" className="element"></Element> */}
+      <Parallax bgImage="https://images.unsplash.com/photo-1504966981333-1ac8809be1ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" blur={{ min: -1, max: 3 }} strength={400}>
+
       <div className="opacityBlue" style={{paddingTop: '40px'}}>
         <div
           data-aos="zoom-in"
@@ -60,22 +72,22 @@ function Creation() {
               data-aos-duration="1000"
             >
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">1</div>
+                <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><span style={{ width: "68%", height: "100%", position: "absolute", }}><p style={{pointerEvents: "none", boxSizing: "content-box",}}>{item.item[0].mission}</p></span><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[0].header}`} alt="" /></div>
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">2</div>
+                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[1].header}`} alt="" /></div>              
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">3</div>
+                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[2].header}`} alt="" /></div>              
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">4</div>
+                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[3].header}`} alt="" /></div>              
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">5</div>
+                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[4].header}`} alt="" /></div>              
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation">6</div>
+                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[5].header}`} alt="" /></div>              
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
                 <div className="boxCréation">7</div>
@@ -103,6 +115,7 @@ function Creation() {
           </div>
         </div>
       </div>
+      </Parallax>
     </>
   );
 }

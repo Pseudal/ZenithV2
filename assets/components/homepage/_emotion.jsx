@@ -1,4 +1,5 @@
 import React from "react";
+import { Parallax } from 'react-parallax';
 
 function Emotion() {
   return (
@@ -11,6 +12,8 @@ function Emotion() {
         {/* <video playsInline autoPlay muted loop>
           <source src="/zenith/video/videobg2.mp4" type="video/mp4"></source>
         </video> */}
+        <Parallax bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80" blur={{ min: -1, max: 3 }} strength={400}>
+
         <div className="opacityBlue" style={{paddingTop: '50px'}}>
         <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">  
           <div className="wrapper2">
@@ -54,6 +57,7 @@ function Emotion() {
           </div>
         </div>
       </div>
+      </Parallax>
     </>
   );
 }

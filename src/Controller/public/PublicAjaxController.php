@@ -22,6 +22,35 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PublicAjaxController extends AbstractController
 {
+    #[Route('/gettAllCreation', name: 'gettAllCreation', methods: ['GET'])]
+    public function gettAllCreation(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    {
+        $Crea = [];
+        try {
+            $next = $client->getAll();
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    array_push($Crea, $n);
+                    
+                } else { 
+                    continue;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($Crea);    
+    }
+
     #[Route('/sendemail', name: 'sendEmail', methods: ['GET', 'POST'])]
     public function sendEmail(Request $request,Session $session): Response
     {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Parallax } from 'react-parallax';
 
 function Vision()  {
 
@@ -12,10 +13,11 @@ function Vision()  {
 				</video> */}
       {/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='background'> */}
 
+      <Parallax bgImage="https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1550&q=80" blur={{ min: -1, max: 3 }} strength={400}>
 
-      <div className="opacityBlue" style={{paddingTop: '80px'}}>
+      <div className="opacityBlue" style={{paddingTop: '200px'}}>
       <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
-        <div className="wrapper">
+        <div className="wrapper" style={{height:"1000px"}}>
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">VISION</h1>
           <h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">LA RENCONTRE QUI CHANGE TOUT</h6>
 
@@ -81,6 +83,7 @@ function Vision()  {
       </div>
     </div>
     </div>
+    </Parallax>
 			</>
 		);
 	}
