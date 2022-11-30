@@ -12,12 +12,13 @@ const Wordpage = ({}) => {
         //style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
         className="demibloc"
         alt="wordpage"
+        style={{height:"580px"}}
       >
         {/* <video playsInline autoPlay muted loop> */}
           {/* <source src="/zenith/video/videobg4.mp4" type="video/mp4"></source> */}
         {/* </video> */}
 
-        <div className="opacityBlue" alt="Liste de mots">
+        <div className="opacityBlue" alt="Liste de mots"style={{height:'100%'}}>
           <div
             style={{width:'100%'}}
             data-aos="zoom-in"
@@ -26,7 +27,7 @@ const Wordpage = ({}) => {
             data-aos-anchor-placement="top-center"
           >
             <div className="parent">
-            <Marquee style={{width:"100%", overflow: 'hidden'}} gradient={false}>
+            <Marquee style={{width:"100%", overflow: 'hidden', display: 'flex', alignItems: 'center'}} gradient={false}>
               <h1 className="wordpage light  grid1" id="wordpage">
                 RÉACTIVITÉ
               </h1>
@@ -74,17 +75,16 @@ const Wordpage = ({}) => {
               >
                 CRÉATIVITÉ
               </h1>
-              <h1 className=" wordpageText medium grid18">·</h1>
+              <h1  className=" wordpageText medium grid18">·</h1>
               <h1  className="wordpage light  grid19">
                 RÊVER
               </h1>
-              <h1 className=" wordpageText outline medium grid20">·</h1>
-              <h1  className="wordpage light  grid21">
+              <h1  className=" wordpageText outline medium grid20">·</h1>
+              <h1 className="wordpage light  grid21">
                 AMBITION
               </h1>
-              <h1 className=" wordpageText medium grid22">·</h1>
+              <h1  className=" wordpageText medium grid22">·</h1>
               <h1
-                
                 className="wordpage outline normal  grid23"
               >
                 IMAGINATION

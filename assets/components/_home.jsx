@@ -117,8 +117,9 @@ function Home() {
 					
 				</Element>	
 
-
-					<Wordpage ></Wordpage>
+				<div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div>
+				<Wordpage ></Wordpage>
+				<div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div>
 
 
 
@@ -145,13 +146,13 @@ function Home() {
 
 				</Element>
 
-				{/* <Element name="scroll-to-element7" className="element">
-					<div data-aos="zoom-in"data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
-						<Chiffres ></Chiffres>
-					</div>	
-				</Element> */}
-
 				<Element name="scroll-to-element7" className="element">
+
+						<Chiffres ></Chiffres>
+						
+				</Element>
+
+				<Element name="scroll-to-element8" className="element">
 
 					<Vision ></Vision>
 

@@ -52,47 +52,57 @@ function Satisfaction() {
           <h6 className="titreCenter light letterSpacingS paddingBottom" data-aos="fade-up" data-aos-duration="1000">DES HISTOIRES HUMAINES, EXCEPTIONNELLES, ORIGINALES.</h6>
           
           <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={120} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={120} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={120} /></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-
-
+            <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
 
 
           </div>
 
           <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
+          <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
 
           </div>
 
           <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
-            <div className="boxXS"></div>
+          <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
 
           </div>
         

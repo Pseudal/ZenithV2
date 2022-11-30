@@ -10,10 +10,12 @@ function Creation(item) {
   function BlurDetail(e){
     console.log(e)
     e.target.style.backdropFilter = "blur(4px)";
+    e.target.children[0].style.display = "inline"
   }
   function RemoveBlurDetail(e){
     console.log(e)
     e.target.style.backdropFilter = "blur(0)";
+    e.target.children[0].style.display = "none"
   }
   return (
     <>
@@ -72,22 +74,22 @@ function Creation(item) {
               data-aos-duration="1000"
             >
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><span style={{ width: "68%", height: "100%", position: "absolute", }}><p style={{pointerEvents: "none", boxSizing: "content-box",}}>{item.item[0].mission}</p></span><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[0].header}`} alt="" /></div>
+                <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[0].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[0].header}`} alt="" /></div>
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[1].header}`} alt="" /></div>              
+              <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[1].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[1].header}`} alt="" /></div>            
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[2].header}`} alt="" /></div>              
+              <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[2].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[2].header}`} alt="" /></div>             
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[3].header}`} alt="" /></div>              
+              <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[3].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[3].header}`} alt="" /></div>            
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[4].header}`} alt="" /></div>              
+              <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[4].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[4].header}`} alt="" /></div>          
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation"><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[5].header}`} alt="" /></div>              
+              <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"50px"}}>{item.item[5].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/images/imageprojet/${item.item[5].header}`} alt="" /></div>
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
                 <div className="boxCréation">7</div>
