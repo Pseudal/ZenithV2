@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 function Homepage() {
 	AOS.init()
 		return (
-			<>
+			
 			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background" alt="homepage" >
 
 				<video playsInline autoPlay muted loop>
@@ -28,7 +28,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			</>
+		
 		);
 	}
  

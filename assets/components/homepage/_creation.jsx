@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+//swiper modifie espace entre element 
+//espace btween maybe  
+
+
 function Creation() {
   return ( 
     <>
@@ -24,15 +28,15 @@ function Creation() {
       breakpoints={{
         640: {
           slidesPerView: 2,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
         768: {
           slidesPerView: 4,
-          spaceBetween: 40,
+          spaceBetween: 20,
         },
         1024: {
           slidesPerView: 5,
-          spaceBetween: 50,
+          spaceBetween: 30,
         },
       }}
       className="swiper2"

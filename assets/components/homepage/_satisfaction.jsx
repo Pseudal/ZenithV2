@@ -5,6 +5,11 @@ import {useEffect} from "react "
 import { defineHidden } from '@react-spring/shared';
 import { Transition } from 'react-spring';
 import { InView } from 'react-intersection-observer';
+import "swiper/css";
+import Swiper from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+
+
 
 function Satisfaction() {
 	const [error, setError] = useState(null);
@@ -21,7 +26,7 @@ const affichText=
 */ 
 //function utilisant use effect useinview
 // TIRER DE CE SITE  //   https://blog.logrocket.com/react-scroll-animations-framer-motion/  //
-
+/*
 const variant =()=> {
 visble: opacity:0 ,
  y: 0
@@ -29,7 +34,7 @@ visble: opacity:0 ,
 Transition: {duration:0.5   }
 hidden: { opacity:0,  y: 200           }
 
-};
+};*/
 
 const Box = () =>{
 const control=useAnimation();
@@ -82,7 +87,6 @@ control.start("visible")
 
 
 		return (
-			<>
       <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">
 
       <video playsInline autoPlay muted loop>
@@ -95,8 +99,29 @@ control.start("visible")
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">SATISFACTION</h1>
           <h6 className="titreCenter light letterSpacingS" data-aos="fade-up" data-aos-duration="1000">ÊTRE À VOS CÔTÉS, C’EST AVANT TOUT DES RENCONTRES.</h6>
           <h6 className="titreCenter light letterSpacingS paddingBottom" data-aos="fade-up" data-aos-duration="1000">DES HISTOIRES HUMAINES, EXCEPTIONNELLES, ORIGINALES.</h6>
-          
-          <motion.div
+
+<Swiper  
+  
+  slidesPerView={1}
+  centeredSlides={true}
+  spaceBetween={0}
+  breakpoints={{
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+  }}
+>
+
+          <div SwiperSlide
           className=  "containerMax center" data-aos="fade-up" data-aos-duration="1000">
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={120} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={120} /></div>
@@ -109,12 +134,10 @@ control.start("visible")
             <div className="boxXS"></div>
             <div className="boxXS"></div>
 
+          </div>  
 
-
-
-          </motion.div>
-
-          <motion.div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
+          <div SwiperSlide
+           className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
             <div className="boxXS"></div>
             <div className="boxXS"></div>
             <div className="boxXS"></div>
@@ -126,9 +149,10 @@ control.start("visible")
             <div className="boxXS"></div>
             <div className="boxXS"></div>
 
-          </motion.div>
+          </div>
 
-          <motion.div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
+          <div SwiperSlide 
+          className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
             <div className="boxXS"></div>
             <div className="boxXS"></div>
             <div className="boxXS"></div>
@@ -140,8 +164,8 @@ control.start("visible")
             <div className="boxXS"></div>
             <div className="boxXS"></div>
 
-          </motion.div>
-        
+          </div>
+ </Swiper>       
 
 
           <h4 className="titreB light letterSpacing container center accroche marginBottom2" data-aos="fade-up" data-aos-duration="1000">LE RESTE ON L’ÉCRIRA ENSEMBLE</h4>
@@ -152,7 +176,7 @@ control.start("visible")
       </div>
 
 
-			</>
+			
 		);
 	}
 }

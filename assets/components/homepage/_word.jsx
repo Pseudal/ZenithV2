@@ -44,62 +44,70 @@ const Wordpage = ({  }) => {
 
         <div className="demibloc2" alt="Liste de mots">
           <div className="parent">
-            <h1 className="wordpage light  grid1" id="wordpage">
+            <h1 className="wordpage light  grid1 font-family:Helvetica  " id="wordpage">
               RÉACTIVITÉ
             </h1>
             <h1 className=" margin medium wordpageText grid2">·</h1>
             <h1
               onMouseOver={() => {scrollingxY}}
-              className="wordpage outline normal grid3"
+              className="wordpage outline normal grid3 font-family:Arial    "
             >
               PROXIMITÉ
             </h1>
             <h1 className=" margin medium wordpageText grid4">·</h1>
-            <h1 onMouseOver={scrollingxY} className="wordpage light  grid5">
+            <h1 onMouseOver={scrollingxY} className="wordpage light  grid5 font-family:Verdena    ">
               PASSION
             </h1>
             <h1 className=" wordpageText  medium grid6">·</h1>
-            <h1 onMouseOver={scrollingxY} className="wordpage normal  grid7">
+            <h1 onMouseOver={scrollingxY} className="wordpage normal  grid7 font-family:Arial     " >
               STRATÉGIE
             </h1>
 
-            <h1 onMouseOver={scrollingY} className="wordpage normal  grid9">
+            <h1 onMouseOver={scrollingY} className="wordpage normal  grid9
+            font-family:Verdana   ">
               COMMUNICATION
             </h1>
-            <h1 className=" wordpageText outline medium grid10">·</h1>
+            <h1 className=" wordpageText outline medium 
+            font-family:arial        grid10">·</h1>
             <h1
               onMouseOver={scrollingY}
-              className="wordpage marron normal  grid11"
+              className="wordpage marron normal  grid11 font-family:Optima      "
             >
               ZENITH
             </h1>
             <h1 className=" wordpageText outline medium grid12">·</h1>
-            <h1 onMouseOver={scrollingY} className="wordpage normal  grid13">
+            <h1 onMouseOver={scrollingY} className="wordpage normal
+            font-family:Arial  grid13">
               CONSEIL
             </h1>
             <h1 className=" wordpageText medium grid14">·</h1>
-            <h1 onMouseOver={scrollingY} className="wordpage normal  grid15">
+            <h1 onMouseOver={scrollingY} className="wordpage normal 
+            font-family:Verdana grid15">
               EVENT
             </h1>
 
             <h1
               onMouseOver={scrollingxY}
-              className="wordpage outline medium  grid17"
+              className="wordpage outline medium  grid17
+              font-family:Arial"
             >
               CRÉATIVITÉ
             </h1>
-            <h1 className=" wordpageText medium grid18">·</h1>
+            <h1 className=" wordpageText medium 
+            font-family:Georgia   grid18">·</h1>
             <h1 onMouseOver={scrollingxY} className="wordpage light  grid19">
               RÊVER
             </h1>
             <h1 className=" wordpageText medium grid20">·</h1>
-            <h1 onMouseOver={scrollingxY} className="wordpage light  grid21">
+            <h1 onMouseOver={scrollingxY} className="wordpage light 
+            font-family:Aria grid21">
               AMBITION
             </h1>
             <h1 className=" wordpageText medium grid22">·</h1>
             <h1
               onMouseOver={scrollingxY}
-              className="wordpage outline normal  grid23"
+              className="wordpage outline normal
+              font-family:Aria   grid23"
             >
               IMAGINATION
             </h1>
