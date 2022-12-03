@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-
+const 
 function ProjectpageSix({data, np}) {
 	if(np[0]){
 		if(np[0][0] == 'null')
