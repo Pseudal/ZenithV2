@@ -7,18 +7,17 @@ import { Parallax } from 'react-parallax';
 const Wordpage = ({}) => {
   return (
     <>
-      <Parallax bgImage="https://images.unsplash.com/photo-1516331138075-f3adc1e149cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1508&q=80" blur={{ min: -1, max: 3 }} strength={400}>
+      {/* <Parallax bgImage="/zenith/images/6Wvemm3K.jpeg" blur={{ min: -1, max: 3 }} strength={0}> */}
       <div
-        //style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
+        style={{ backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", height:"580px"}}
         className="demibloc"
         alt="wordpage"
-        style={{height:"580px"}}
       >
         {/* <video playsInline autoPlay muted loop> */}
           {/* <source src="/zenith/video/videobg4.mp4" type="video/mp4"></source> */}
         {/* </video> */}
 
-        <div className="opacityBlue" alt="Liste de mots"style={{height:'100%'}}>
+        <div className="" alt="Liste de mots"style={{height:'100%'}}>
           <div
             style={{width:'100%'}}
             data-aos="zoom-in"
@@ -95,7 +94,7 @@ const Wordpage = ({}) => {
           </div>
         </div>
       </div>
-      </Parallax>
+      {/* </Parallax> */}
     </>
   );
 };

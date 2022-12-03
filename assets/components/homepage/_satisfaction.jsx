@@ -40,9 +40,9 @@ function Satisfaction() {
       <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg5.mp4" type="video/mp4"></source>
 				</video> */}
-      <Parallax bgImage="https://images.unsplash.com/photo-1571279385405-0ead41baf035?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80" blur={{ min: -1, max: 3 }} strength={400}>
+      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
 
-      <div className="opacityBlue" style={{paddingTop: '60px'}}>
+      <div className="" style={{paddingTop: '60px'}}>
         <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
         <div className="wrapper2">
 
@@ -53,15 +53,15 @@ function Satisfaction() {
           
           <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
             <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_2b72e82a682746918e15d9f67e937eb7~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4c75fd3f519e4220bb582d77c8aa7c82~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4d7257924ac5485fa6eb9f8c3ba8c3f2~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_64a6409454d14d52850cd6724850555b~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_420abce0c47d4d7e9e7d2166305ea6be~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_915be6d874694d5d860b6153ab3f9ee6~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4766f6ba387d4ebd863e3bfac94d2af1~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_76619572c46e4e2085adb0943cb1110b~mv2.png"} alt="" width={70} /></div>
+            <div className="boxXS"><img src={"/zenith/icons/0afdc7_ad8ee0a40ea84fb08cee49b929a398ad~mv2.png"} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>

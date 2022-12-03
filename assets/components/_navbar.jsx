@@ -28,7 +28,12 @@ function navbar() {
       </label>
     
       <ul className="menu__box" data-aos="fade-right">
-        <form onSubmit={teleport}><input className="inputMail menu__item1 light letterSpacingS" type="text" id="email" size="8" required placeholder="Chercher" value={searchInput} onChange={handleChange}></input></form>
+        <form onSubmit={teleport}>
+          <div class="form__group field divC1 menu__item1" >
+            <input type="input" size="15" class="form__field" placeholder="Name" id="email" value={searchInput} onChange={handleChange} required></input>
+            <label for="name" class="form__label">Recherche</label>
+          </div>
+          </form>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco marginStop" to="/">ACCUEIL</Link></h5>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/projets">PROJETS</Link></h5>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/contact">CONTACT</Link></h5>

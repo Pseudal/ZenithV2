@@ -117,9 +117,9 @@ function Home() {
 					
 				</Element>	
 
-				<div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div>
+				{/* <div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div> */}
 				<Wordpage ></Wordpage>
-				<div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div>
+				{/* <div style={{width:"100%", height:"50px", backgroundColor:"white"}}></div> */}
 
 
 

@@ -13,9 +13,9 @@ function Action() {
         className="background"
         alt="action"
       > */}
-      <Parallax bgImage="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" blur={{ min: -1, max: 3 }} strength={400}>
+      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
 
-      <div className="opacityBlue" style={{ paddingTop: "30px" }}>
+      <div className="" style={{ paddingTop: "30px" }}>
         <div className="wrapper2">
           <div
             className="container2"
