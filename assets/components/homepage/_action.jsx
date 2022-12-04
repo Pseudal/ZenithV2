@@ -39,7 +39,8 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                        "url(https://www.businessmarches.com/wp-content/uploads/2015/11/shutterstock_195467156.jpg)",
+                        "url(/zenith/images/COMM.jpg)",
+                        backgroundPosition: "center"
                     }}
                   >
                     <div
@@ -70,7 +71,7 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                        "url(https://www.permis-de-exploitation.com/pix/boite-de-nuit-pratique-business.jpg)",
+                      "url(/zenith/images/EVENT.jpg)",
                       backgroundSize: "cover",
                     }}
                   >
@@ -102,7 +103,7 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                        "url(https://static.wixstatic.com/media/bb5e3b_4a0958f2b3a0490f8942a00b65550d51~mv2_d_6000_3000_s_4_2.jpg/v1/fill/w_1588,h_794,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/bb5e3b_4a0958f2b3a0490f8942a00b65550d51~mv2_d_6000_3000_s_4_2.jpg)",
+                      "url(/zenith/images/pexels-andrea-piacquadio-3760093.jpg)",
                       backgroundSize: "cover",
                       }}
                   >

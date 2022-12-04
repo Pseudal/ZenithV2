@@ -1,18 +1,16 @@
 import React from "react";
+import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
+import '../../stylesheets/bulma/grid/columns.sass';
+import '../../stylesheets/bulma/helpers/spacing.sass';
 
 function WorkpageTwo(data) {
   console.log(data);
   let box = [];
   for (let index = 0; index < data.data.length; index++) {
-    if (
-      index % 3 == 0 &&
-      data.data[index + 2] &&
-      data.data[index + 1] &&
-      data.data[index]
-    ) {
       let item = (
-        <div className="container4 center" key={index}>
+        <div className="column columns is-4 is-centered">
+          <div className="is-half">
           <a href={"/projet/" + data.data[index].id}>
             <div className="boxWorkpage1">
               <p style={{ position: "absolute" }} className="textDeco">
@@ -25,44 +23,23 @@ function WorkpageTwo(data) {
               />
             </div>
           </a>
-          <a href={"/projet/" + data.data[index + 1].id}>
-            <div className="boxWorkpage1">
-              <p style={{ position: "absolute" }} className="textDeco">
-                {data.data[index + 1].projet}
-              </p>
-              <img
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                src={"/images/imageprojet/" + data.data[index + 1].header}
-                alt=""
-              />
-            </div>
-          </a>
-          <a href={"/projet/" + data.data[index + 2].id}>
-            <div className="boxWorkpage1">
-              <p style={{ position: "absolute" }} className="textDeco">
-                {data.data[index + 2].projet}
-              </p>
-              <img
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                src={"/images/imageprojet/" + data.data[index + 2].header}
-                alt=""
-              />
-            </div>
-          </a>
+          </div>
         </div>
       );
       box.push(item);
-    } else {
-      continue;
     }
-  }
+  
 
   return (
     <>
-      <div className="" alt="action">
-        <div className="opacityBlue">
-          <div className="wrapper">
-            {box}
+    <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>
+      <div className="pt-6" alt="action">
+        <div className="pt-6">
+          <div className="">
+            <div className="columns is-multiline is-centered">
+              {box}
+            </div>
+            
             {/* <div className="container4 center">
             		<a href=""><div className="boxWorkpage1"><p className="light">{data.data[0].projet}</p><img src={"/images/imageprojet/" + data.data[0].header} alt="" style={{ maxWidth: "100%", height: "auto"}}/></div></a>
             		<a href=""><div className="boxWorkpage1"></div></a>
@@ -82,6 +59,7 @@ function WorkpageTwo(data) {
           </div>
         </div>
       </div>
+    </Parallax>
     </>
   );
 }

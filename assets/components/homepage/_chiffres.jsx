@@ -25,15 +25,15 @@ function Chiffres() {
                 <h5 className="light chiffres2">CRÉATIONS PHOTOS</h5>
               </div>
               <div className="div3" data-aos="fade-up" data-aos-duration="1000">
-                <h1 className="medium chiffres">60</h1>
+                <h1 className="medium chiffres">+160</h1>
                 <h5 className="light chiffres2">NOMBRES DE COLLABORATEUR</h5>
               </div>
               <div className="div4" data-aos="fade-up" data-aos-duration="1000">
-                <h1 className="medium chiffres">150</h1>
+                <h1 className="medium chiffres">+150</h1>
                 <h5 className="light chiffres2">RÉALISATIONS VIDÉOS</h5>
               </div>
               <div className="div5" data-aos="fade-up" data-aos-duration="1000">
-                <h1 className="medium chiffres">200</h1>
+                <h1 className="medium chiffres">+200</h1>
                 <h5 className="light chiffres2">CRÉATIONS DIGITALES </h5>
               </div>
               <div className="div6" data-aos="fade-up" data-aos-duration="1000">
