@@ -60,7 +60,7 @@ function Footer() {
       						<a className="linkedin2" href='https://www.linkedin.com/company/agence-zenith/'></a>
 							  </div>
 								<form onSubmit={handleSubmit} >
-									<h4 className="titreD medium letterSpacing marginBottom ">NEWSLETTER</h4>
+									<h4 className="titreD medium letterSpacing marginBottom "> NEWSLETTER</h4>
 									<input className="inputMail center"
 									type="email" 
 									id="email" 
@@ -78,10 +78,10 @@ function Footer() {
 										<a href="" className="footerText light text-h5">ACCUEIL</a>
 									</li>
 									<li className='li2'>
-										<a href="" className="footerText light text-h5">PROJETS</a>
+										<a href="" className="footerText light text-h5">CLIENT</a>
 									</li>
 									<li className='li2'>
-										<a href="" className="footerText light text-h5">ÉQUIPE</a>
+										<a href="" className="footerText light text-h5">PROJETS</a>
 									</li>
 									<li className='li2'>
 										<a href="" className="footerText light text-h5">CONTACT</a>

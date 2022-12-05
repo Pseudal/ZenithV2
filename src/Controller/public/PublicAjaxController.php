@@ -22,6 +22,52 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PublicAjaxController extends AbstractController
 {
+    #[Route('/gettAllProject/{id}', name: 'gettAllProject', methods: ['GET'])]
+    public function gettAllProject(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    {
+        $id = $request->get('id');
+        try {
+            $next = $client->getAllPagination($id);
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($next);    
+    }
+
+    #[Route('/getCount/{target}', name: 'getCount', methods: ['GET'])]
+    public function getCount(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    {
+        $target = $request->get('target');
+        $count = 0;
+        try {
+            if($target == "projet"){
+                $count = $client->getCount();
+            }
+
+        } catch (\Throwable $th) {
+            
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($count);    
+    }
+
     #[Route('/gettAllCreation', name: 'gettAllCreation', methods: ['GET'])]
     public function gettAllCreation(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
     {
@@ -94,33 +140,6 @@ class PublicAjaxController extends AbstractController
             return new JsonResponse(false);
         }
         return new JsonResponse(false);    
-    }
-    #[Route('/gettAllProject', name: 'gettAllProject', methods: ['GET'])]
-    public function gettAllProject(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
-    {
-        try {
-            $next = $client->getAll();
-            $i = 0;
-            foreach($next as $n){
-
-                $getHeader = $clientImageRepository->checkHeader($n["id"]);
-                $n["test"] = "coucou";
-               
-                if($getHeader){
-                    $n['header'] = $getHeader->getImage();
-                    $next[$i] = $n;
-                } else { 
-                    $n['header'] = "rien a voir, circulez"; 
-                    $getHeader = 0;
-                }  
-                $i++;
-            }
-
-        } catch (\Throwable $th) {
-            
-            return new JsonResponse($th);
-        }
-        return new JsonResponse($next);    
     }
     #[Route('/gettAllClient', name: 'gettAllClient', methods: ['GET'])]
     public function gettAllClient(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response

@@ -8,25 +8,22 @@ import WorkpageThree from "./_workpageThree";
 import WorkpageFour from "./_workpageFour";
 import WorkpageFive from "./_workpageFive";
 import MiniFooter from "../Homepage/_miniFooter";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
+import { useParams } from "react-router-dom";
 
 
 function Workpage() {
+	const { nbr } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [isLoadedImg, setIsLoadedImg] = useState(false);
+	const [isCountLoaded, setIsCountLoaded] = useState(false);
 	const [isLoadedNextPrev, setIsLoadedNextPrev] = useState(false);
 	const [isImgReady, setImgReady] = useState(false);
 	const [items, setItems] = useState([]);
-	const [images, setImages] = useState([]);
-	const [header, setHeader] = useState([]);
-	const [preci, setPreci] = useState([]);
-	const [second, setSecond] = useState([]);
-	const [display, setDisplay] = useState([]);
-	const [NextPrev, setNextPrev] = useState([]);
+	const [count, setCount] = useState([]);
 		useEffect(() => {
 
-			fetch(`/gettAllProject/`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/gettAllProject/${nbr}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -42,11 +39,28 @@ function Workpage() {
 				console.log(error);
 				}
 			)
+
+			fetch(`/getCount/projet`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			.then(res => res.json())
+			.then(
+				(result) => {
+				setCount(result);
+				setIsCountLoaded(true);
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+				setIsCountLoaded(true);
+				setError(error);
+				console.log(error);
+				}
+			)
 		}, [])
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded ) {
+	  } else if (!isLoaded || !isCountLoaded) {
 		return <div>dbfgbfg...</div>;
 	  } else {
 			return (  
@@ -57,7 +71,7 @@ function Workpage() {
 		<LinesBottom></LinesBottom>
 		
 		<WorkpageOne></WorkpageOne>
-		<WorkpageTwo data={items}></WorkpageTwo>
+		<WorkpageTwo data={items} page={nbr} count={count}></WorkpageTwo>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>

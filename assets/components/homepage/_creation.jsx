@@ -110,8 +110,7 @@ function Creation(item) {
               className="marginBottom2 btnS center light letterSpacingM"
             >
               <Link to="/projets" className="textDeco">
-                DÉCOUVRIR
-              </Link>
+                 DÉCOUVRIR +</Link>
             </button>
             </div>
           </div>

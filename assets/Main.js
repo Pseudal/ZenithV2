@@ -9,7 +9,7 @@ import ClientPage from './components/Clientpage/_clientpage';
 import { useLayoutEffect } from 'react'
 import Projectpage from './components/Projectpage/_projectpage';
 import SearchPage from './components/SearchPage/_SearchPage';
-import SearchPage2 from './components/SearchPage2/_SearchPage2';
+import SearchPage2 from './components/SearchPage2/_SearchPage2'; 
 
 const Main = () => {
 
@@ -28,7 +28,7 @@ const Main = () => {
         <Routes>
         
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/projets" element={<Workpage />} />
+          <Route exact path="/projets/:nbr" element={<Workpage />} />
           <Route exact path="/clients" element={<WorkpageClient />} />
           <Route exact path="/contact" element={<ContactPage />} />
           <Route exact path="/client/:id" element={<ClientPage />} />

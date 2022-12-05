@@ -70,6 +70,15 @@ class ProjetRepository extends ServiceEntityRepository
         ->getQuery()
         ->getArrayResult();
    }
+
+   public function getAllPagination($value)
+   {
+       return $this->createQueryBuilder('c')
+        ->getQuery()
+        ->setFirstResult(($value-1)*9)
+        ->setMaxResults(9)
+        ->getArrayResult();
+   }
    
    public function getNull(): array
    {

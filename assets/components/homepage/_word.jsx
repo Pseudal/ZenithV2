@@ -27,7 +27,7 @@ const Wordpage = ({}) => {
           >
             <div className="parent">
             <Marquee style={{width:"100%", overflow: 'hidden', display: 'flex', alignItems: 'center'}} gradient={false}>
-              <h1 className="wordpage light  grid1" id="wordpage">
+              <h1 className="wordpage letterSpacing light  grid1" id="wordpage">
                 RÉACTIVITÉ
               </h1>
               <h1 className=" margin medium wordpageText grid2">·</h1>

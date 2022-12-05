@@ -26,7 +26,7 @@ function Chiffres() {
               </div>
               <div className="div3" data-aos="fade-up" data-aos-duration="1000">
                 <h1 className="medium chiffres">+160</h1>
-                <h5 className="light chiffres2">NOMBRES DE COLLABORATEUR</h5>
+                <h5 className="light chiffres2">PROJETS RÉALISÉS</h5>
               </div>
               <div className="div4" data-aos="fade-up" data-aos-duration="1000">
                 <h1 className="medium chiffres">+150</h1>
