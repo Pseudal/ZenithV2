@@ -15,7 +15,7 @@ function Instaflux() {
           
           <div className="containerCenterFlex" id='Insta'>
             
-          <div className="Rectangle1" ></div>
+          {/* <div className="Rectangle1" ></div>
           <div className="Rectangle2"></div>
           <div className="Rectangle3"></div>
           <div><p className="IMAGINER" data-aos="fade-up" data-aos-duration="1000">IMAGINER</p></div>
@@ -35,8 +35,9 @@ function Instaflux() {
           <div className="Rectangle12"></div>
           <div className="Rectangle13"></div>
           <div className="Rectangle14"></div>
-          <div className="Rectangle15"></div> 
-
+          <div className="Rectangle15"></div>  */}
+          <script src="https://s.electricblaze.com/widget.js" defer></script>
+          <div class="electricblaze-id-2Uhx7Px"></div>
 
 
 

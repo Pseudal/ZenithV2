@@ -55,6 +55,9 @@ class ProjetImage
     #[ORM\Column(options: ["default" => 1])]
     private ?bool $visible = null;
 
+    #[ORM\Column(options: ["default" => 0])]
+    private ?bool $creation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -147,6 +150,18 @@ class ProjetImage
     public function setVisible(bool $visible): self
     {
         $this->visible = $visible;
+
+        return $this;
+    }
+
+    public function isCreation(): ?bool
+    {
+        return $this->creation;
+    }
+
+    public function setCreation(?bool $creation): self
+    {
+        $this->creation = $creation;
 
         return $this;
     }

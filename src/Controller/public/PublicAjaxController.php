@@ -45,7 +45,7 @@ class PublicAjaxController extends AbstractController
             }
 
         } catch (\Throwable $th) {
-            
+            dd($th);
             return new JsonResponse($th);
         }
         return new JsonResponse($next);    

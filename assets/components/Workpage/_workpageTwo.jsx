@@ -10,7 +10,7 @@ import '../../stylesheets/pagination.less'
 
 function WorkpageTwo({data, page, count}) {
   console.log(count)
-  let pageNbr = Math.ceil(count / 9)
+  let pageNbr = Math.ceil(count / 20)
   let nbr = parseInt(page)
   function onChange(params) {
     document.location = `/projets/${params}`
@@ -19,7 +19,7 @@ function WorkpageTwo({data, page, count}) {
   let box = [];
   for (let index = 0; index < data.length; index++) {
       let item = (
-        <div key={index} className="column columns is-4 is-centered">
+        <div key={index} className="column columns is-one-fifth is-centered">
           <div className="is-half">
           <a href={"/projet/" + data[index].id}>
             <div className="boxWorkpage1">

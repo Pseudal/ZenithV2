@@ -53,7 +53,7 @@ function Creation(item) {
             <Swiper
             style={{height: '500px'}}
               slidesPerView={1}
-              centeredSlides={true}
+              centeredSlides={false}
               spaceBetween={0}
               breakpoints={{
                 640: {
@@ -76,7 +76,7 @@ function Creation(item) {
               <SwiperSlide className="swiperSlide2">
                 <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[0].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/_DSC1097.jpg`} alt="" /></div>
               </SwiperSlide>
-              <SwiperSlide className="swiperSlide2">
+              {/* <SwiperSlide className="swiperSlide2">
               <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[1].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/_DSC1300.jpg`} alt="" /></div>            
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
@@ -96,7 +96,7 @@ function Creation(item) {
               </SwiperSlide>
               <SwiperSlide className="swiperSlide2">
               <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[5].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/DIA_0759.jpg`} alt="" /></div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
             <div
               data-aos="fade-up"

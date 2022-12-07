@@ -103,6 +103,16 @@ class ProjetImageRepository extends ServiceEntityRepository
        ;
     }
 
+    public function checkCreation($value): ?ProjetImage
+    {
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.creation = 1 AND c.projet = :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+    }
+
 //    public function findOneBySomeField($value): ?ProjetImage
 //    {
 //        return $this->createQueryBuilder('c')

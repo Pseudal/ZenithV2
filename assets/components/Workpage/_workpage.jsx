@@ -29,6 +29,7 @@ function Workpage() {
 				(result) => {
 				setItems(result);
 				setIsLoaded(true);
+				console.log(result);
 				},
 				// Note: it's important to handle errors here
 				// instead of a catch() block so that we don't swallow

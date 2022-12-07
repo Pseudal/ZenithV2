@@ -74,9 +74,10 @@ class ProjetRepository extends ServiceEntityRepository
    public function getAllPagination($value)
    {
        return $this->createQueryBuilder('c')
+        ->orderBy('c.id', 'DESC')
         ->getQuery()
-        ->setFirstResult(($value-1)*9)
-        ->setMaxResults(9)
+        ->setFirstResult(($value-1)*20)
+        ->setMaxResults(20)
         ->getArrayResult();
    }
    
@@ -95,8 +96,8 @@ class ProjetRepository extends ServiceEntityRepository
        ->select('count(c.id)')
        ->getQuery()
        ->getSingleScalarResult();
-       ;
    }
+
    public function findByExampleFieldArray($value): array
    {
        return $this->createQueryBuilder('c')

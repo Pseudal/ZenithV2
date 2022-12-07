@@ -171,9 +171,9 @@
                     </div>
                 </div>  
 
-                <div class="modal fade" id="OptionModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade " id="OptionModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
+                        <div class="modal-content bg-dark">
                         <div class="modal-header">
                             <h5 class="modal-title text-center" id="exampleModalLabel">{{projet_image.image}}</h5>
                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
@@ -194,6 +194,11 @@
                             <div class="form-check form-switch">
                                 <input data-img-route="{{ vich_uploader_asset(projet_image, 'imageFile')}}" data-typeaction="focus" data-idimg="{{projet_image.id}}" data-route="{{ path('setfocus', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btnfocus{{projet_image.id}}" {% if projet_image.focus %} checked {% endif %} />
                                 <label class="form-check-label" for="btnfocus{{projet_image.id}}">focus</label>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input data-img-route="{{ vich_uploader_asset(projet_image, 'imageFile')}}" data-typeaction="creation" data-idimg="{{projet_image.id}}" data-route="{{ path('setcreation', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btncreation{{projet_image.id}}" {% if projet_image.creation %} checked {% endif %} />
+                                <label class="form-check-label" for="btncreation{{projet_image.id}}">creation</label>
                             </div>
 
                             <div class="form-check form-switch">
@@ -271,7 +276,7 @@
             <a class="btn btn-primary" href="{{ path('admin_projetImage_new', {'id': id }) }}">Créer ma première image !</a>
         </div>
     {% endif %}
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
 
     let btn = document.querySelector('#btnlol')
