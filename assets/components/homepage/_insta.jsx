@@ -1,6 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
-function Instaflux() {
+function Instaflux() {let insta = useRef(null);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://s.electricblaze.com/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+  }, []);
+
+
+
+
+  if (document.readyState === "complete") {
+    setTimeout(() => {
+      insta.current.firstChild.firstChild.style.backgroundColor = "rgba(2, 2, 2, 0)"
+    console.log(insta.current)
+  }, 2000);
+  }
+
 
 		return (
 			<>
@@ -13,7 +31,7 @@ function Instaflux() {
         <div className="wrapper2">
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">#AGENCEZENITH</h1>
           
-          <div className="containerCenterFlex" id='Insta'>
+          <div ref={insta} className="containerCenterFlex">
             
           {/* <div className="Rectangle1" ></div>
           <div className="Rectangle2"></div>
@@ -36,8 +54,7 @@ function Instaflux() {
           <div className="Rectangle13"></div>
           <div className="Rectangle14"></div>
           <div className="Rectangle15"></div>  */}
-          <script src="https://s.electricblaze.com/widget.js" defer></script>
-          <div class="electricblaze-id-2Uhx7Px"></div>
+          <div class="electricblaze-id-2Uhx7Q9"></div>
 
 
 
