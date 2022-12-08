@@ -7,7 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SpaController extends AbstractController
-{
+{    
+    #[Route('/', name: 'home')]
+    public function home(): Response
+    {
+        return $this->render('base.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+    
     #[Route('/{reactRouting}', name: 'app_spa', requirements:["reactRouting" => "^(?!api).+"], defaults:["reactRouting" => null])]
     public function index(): Response
     {
@@ -16,11 +24,5 @@ class SpaController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'home')]
-    public function home(): Response
-    {
-        return $this->render('base.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
-    }
+
 }

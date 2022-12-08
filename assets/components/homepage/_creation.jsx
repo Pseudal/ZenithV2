@@ -6,7 +6,16 @@ import { Element } from "react-scroll";
 import { Parallax } from 'react-parallax';
 
 function Creation(item) {
-  console.log(item);
+  let slider = []
+  console.log(item)
+  if(item.item.length >0) {
+    item.item.forEach(element => {
+      let newSlider = (<SwiperSlide key={element.id} className="swiperSlide2"><div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[0].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`images/imageprojet/${element.creation}`} alt="" /></div></SwiperSlide>)
+      slider.push(newSlider)
+    });
+  }else{
+    slider = ( <h1 className="titreA medium letterSpacing marginStop">rien a voir</h1> )
+  }
   function BlurDetail(e){
     console.log(e)
     e.target.style.backdropFilter = "blur(4px)";
@@ -73,9 +82,7 @@ function Creation(item) {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              <SwiperSlide className="swiperSlide2">
-                <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[0].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/_DSC1097.jpg`} alt="" /></div>
-              </SwiperSlide>
+              {slider}
               {/* <SwiperSlide className="swiperSlide2">
               <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[1].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/_DSC1300.jpg`} alt="" /></div>            
               </SwiperSlide>

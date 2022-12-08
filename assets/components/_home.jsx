@@ -103,7 +103,7 @@ function Home() {
 	// lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 	// }, false);
 
-	if(items.length){
+	if(items){
 		return (
 			<>
 			<Navbar></Navbar>

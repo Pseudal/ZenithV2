@@ -74,20 +74,20 @@ class PublicAjaxController extends AbstractController
         $Crea = [];
         try {
             $next = $client->getAll();
-            $i = 0;
             foreach($next as $n){
-
-                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                if(count($Crea) >= 20){
+                    break;
+                }
+                $getHeader = $clientImageRepository->checkCreation($n["id"]);
                 $n["test"] = "coucou";
                
                 if($getHeader){
-                    $n['header'] = $getHeader->getImage();
+                    $n['creation'] = $getHeader->getImage();
                     array_push($Crea, $n);
                     
                 } else { 
                     continue;
                 }  
-                $i++;
             }
 
         } catch (\Throwable $th) {

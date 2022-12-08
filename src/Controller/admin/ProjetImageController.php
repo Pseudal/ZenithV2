@@ -34,7 +34,7 @@ class ProjetImageController extends AbstractController
         $thisproject = $projetRepository->find(($request->get('id')));
 
         
-        $thisEntity = $projetImageRepository->findLast();
+        $thisEntity = $projetImageRepository->findLast($id);
         if($thisEntity){
             $pres[1] = $projetImageRepository->checkHeader($thisEntity[0]->getProjet()->getId());
             $pres[2] = $projetImageRepository->checkSecondaire($thisEntity[0]->getProjet()->getId());
@@ -96,7 +96,7 @@ class ProjetImageController extends AbstractController
                 $projetImage->setProjet($thisprojet)->setHeader(false)->setSecondaire(false)->setFocus(false)->setVisible(true)->setCreation(false);
                 $projetImage->setImageFile($file);
                 $projetImageRepository->add($projetImage, true);
-                $results = $projetImageRepository->findLast();
+                $results = $projetImageRepository->findLast($returnid);
         
                 
                 //changer taille image

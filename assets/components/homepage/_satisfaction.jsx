@@ -58,10 +58,6 @@ function Satisfaction() {
             <div className="boxXS"><img src={"/zenith/icons/0afdc7_4d7257924ac5485fa6eb9f8c3ba8c3f2~mv2.png"} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/zenith/icons/0afdc7_64a6409454d14d52850cd6724850555b~mv2.png"} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/zenith/icons/0afdc7_420abce0c47d4d7e9e7d2166305ea6be~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_915be6d874694d5d860b6153ab3f9ee6~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4766f6ba387d4ebd863e3bfac94d2af1~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_76619572c46e4e2085adb0943cb1110b~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_ad8ee0a40ea84fb08cee49b929a398ad~mv2.png"} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
@@ -76,10 +72,6 @@ function Satisfaction() {
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
@@ -95,10 +87,6 @@ function Satisfaction() {
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
             <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>

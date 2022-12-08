@@ -54,10 +54,12 @@ class ProjetImageRepository extends ServiceEntityRepository
        ;
    }
 
-   public function findLast(): array
+   public function findLast($projet): array
    {
        return $this->createQueryBuilder('c')
        ->orderBy('c.id', 'DESC')
+       ->andWhere('c.projet = :val')
+       ->setParameter('val', $projet)
        ->setMaxResults(1)
         //    ->setMaxResults(10)
         ->getQuery()
