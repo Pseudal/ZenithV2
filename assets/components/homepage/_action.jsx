@@ -39,9 +39,9 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                        "url(/zenith/images/COMM.jpg)",
-                        backgroundPosition: "center"
-                    }}
+                      "url(/zenith/images/pexels-andrea-piacquadio-3760093.jpg)",
+                      backgroundSize: "cover",
+                      }}
                   >
                     <div
                       style={{
@@ -71,7 +71,7 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                      "url(/zenith/images/EVENT.jpg)",
+                      "url(/zenith/images/COMM.jpg)",
                       backgroundSize: "cover",
                     }}
                   >
@@ -103,7 +103,7 @@ function Action() {
                     className="boxCarre"
                     style={{
                       backgroundImage:
-                      "url(/zenith/images/pexels-andrea-piacquadio-3760093.jpg)",
+                      "url(/zenith/images/EVENT.jpg)",
                       backgroundSize: "cover",
                       }}
                   >
@@ -129,22 +129,6 @@ function Action() {
                 </Link>
               </SwiperSlide>
 
-              <SwiperSlide>
-                <Link to="/projets" className="textDeco">
-                  <div className="boxCarre">
-                    <p className="textAction1 letterSpacingS ">
-                      CONSEIL
-                      <br />
-                      <br />
-                      <span className="light">
-                        ACCOMPAGNEMENT
-                        <br />
-                        360°
-                      </span>
-                    </p>
-                  </div>
-                </Link>
-              </SwiperSlide>
             </Swiper>
 
             <h4
