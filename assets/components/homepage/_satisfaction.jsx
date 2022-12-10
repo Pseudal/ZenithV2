@@ -43,7 +43,7 @@ function Satisfaction() {
       <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
 
       <div className="" style={{paddingTop: '60px'}}>
-        <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
+        <div>
         <div className="wrapper2">
 
 
@@ -51,46 +51,43 @@ function Satisfaction() {
           <h6 className="titreCenter light letterSpacingS" data-aos="fade-up" data-aos-duration="1000">ÊTRE À VOS CÔTÉS, C’EST AVANT TOUT DES RENCONTRES.</h6>
           <h6 className="titreCenter light letterSpacingS paddingBottom" data-aos="fade-up" data-aos-duration="1000">DES HISTOIRES HUMAINES, EXCEPTIONNELLES, ORIGINALES.</h6>
           
-          <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-            <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_2b72e82a682746918e15d9f67e937eb7~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4c75fd3f519e4220bb582d77c8aa7c82~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_4d7257924ac5485fa6eb9f8c3ba8c3f2~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_64a6409454d14d52850cd6724850555b~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/zenith/icons/0afdc7_420abce0c47d4d7e9e7d2166305ea6be~mv2.png"} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-
-
+          <div className="containerMax center">
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/zenith/icons/0afdc7_2b72e82a682746918e15d9f67e937eb7~mv2.png"} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/zenith/icons/0afdc7_4c75fd3f519e4220bb582d77c8aa7c82~mv2.png"} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/zenith/icons/0afdc7_4d7257924ac5485fa6eb9f8c3ba8c3f2~mv2.png"} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/zenith/icons/0afdc7_64a6409454d14d52850cd6724850555b~mv2.png"} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/zenith/icons/0afdc7_420abce0c47d4d7e9e7d2166305ea6be~mv2.png"} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1000" style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
           </div>
 
-          <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-          <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-
+          <div className="containerMax center">
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="1500" style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
           </div>
 
-          <div className="containerMax center" data-aos="fade-up" data-aos-duration="1000">
-          <div style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
-            <div className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
-            <div style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+          <div className="containerMax center">
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" style={{marginLeft:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[1]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[2]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
+            <div data-aos="fade-up" data-aos-once="false" data-aos-duration="2000" style={{marginRight:"88px"}} className="boxXS"><img src={"/images/logoclient/"+items[0]["logo"]} alt="" width={70} /></div>
 
           </div>
         
