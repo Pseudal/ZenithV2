@@ -1,21 +1,6 @@
-let cahcemisere = document.querySelector("#loading")
-function fadeOut(elem, speed)
-	{
-
-        if(!elem.style.opacity)
-        {
-            elem.style.opacity = 1;
-        }
-        setInterval(function(){
-
-    elem.style.opacity -= 0.15;
-    
-        }, speed /50);
-    }
-
 var readyStateCheckInterval = setInterval(function() {
     if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval);
-        fadeOut(cahcemisere, 2000)
+        $("#loading").fadeOut();
     }
 }, 10);

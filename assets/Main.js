@@ -10,6 +10,7 @@ import { useLayoutEffect } from 'react'
 import Projectpage from './components/Projectpage/_projectpage';
 import SearchPage from './components/SearchPage/_SearchPage';
 import SearchPage2 from './components/SearchPage2/_SearchPage2'; 
+import "./stylesheets/bulma/grid/columns.sass"
 
 const Main = () => {
 

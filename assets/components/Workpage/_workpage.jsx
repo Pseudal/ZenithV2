@@ -17,9 +17,11 @@ function Workpage() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isCountLoaded, setIsCountLoaded] = useState(false);
+	const [isCatLoaded, setIsCatLoaded] = useState(false);
 	const [isLoadedNextPrev, setIsLoadedNextPrev] = useState(false);
 	const [isImgReady, setImgReady] = useState(false);
 	const [items, setItems] = useState([]);
+	const [cat, setCat] = useState([]);
 	const [count, setCount] = useState([]);
 		useEffect(() => {
 
@@ -57,12 +59,28 @@ function Workpage() {
 				console.log(error);
 				}
 			)
+			fetch(`/api/categories`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			.then(res => res.json())
+			.then(
+				(result) => {
+				setCat(result);
+				setIsCatLoaded(true);
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+				setIsCountLoaded(true);
+				setError(error);
+				console.log(error);
+				}
+			)
 		}, [])
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded || !isCountLoaded) {
-		return <div>dbfgbfg...</div>;
+	  } else if (!isLoaded || !isCountLoaded|| !isCatLoaded) {
+		return <div>Loading...</div>;
 	  } else {
 			return (  
 		<>
@@ -71,7 +89,7 @@ function Workpage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<WorkpageOne></WorkpageOne>
+		<WorkpageOne cat={cat}></WorkpageOne>
 		<WorkpageTwo data={items} page={nbr} count={count}></WorkpageTwo>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
