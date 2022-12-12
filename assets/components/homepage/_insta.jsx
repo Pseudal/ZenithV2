@@ -71,7 +71,7 @@ function Instaflux() {let insta = useRef(null);
           <div className="Rectangle14"></div>
           <div className="Rectangle15"></div>  */}
                 <iframe
-                  src="//lightwidget.com/widgets/b9227261d32c52f8b0e28f7eb0a92e7a.html" 
+                  src="//lightwidget.com/widgets/f2c83bb613395c9fa7bd7a355247d3cf.html" 
                   scrolling="no"
                   allowtransparency="true"
                   class="lightwidget-widget"

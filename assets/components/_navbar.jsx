@@ -36,7 +36,7 @@ function navbar() {
           </form>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco marginStop" to="/">ACCUEIL</Link></h5>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/clients">CLIENTS</Link></h5>
-        <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/projets">PROJETS</Link></h5>
+        <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/projets/1">PROJETS</Link></h5>
         <h5 className="menu__item light letterSpacingS"><Link className="textDeco" to="/contact">CONTACT</Link></h5>
         <a className="textDeco letterSpacingS" href="/login"><h5 className="menu__item textDeco light">ADMIN</h5></a>
       </ul>
