@@ -1,0 +1,42 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <h1>Client</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>NomClient</th>
+                <td>{{ client.nomClient }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ client.logo }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                    {% if client.tag %}
+                        <td>{{ client.tag.tag }}</td>
+                    {% else %}
+                        <td>N/A</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <th>Website</th>
+                <td>{{ client.website }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_client_index') }}">back to list</a>
+
+    <a href="{{ path('admin_client_edit', {'id': client.id}) }}">edit</a>
+
+    {{ include('admin/client/_delete_form.html.twig') }}
+{% endblock %}

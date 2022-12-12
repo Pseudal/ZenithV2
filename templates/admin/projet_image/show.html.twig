@@ -1,0 +1,26 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}ProjetImage{% endblock %}
+
+{% block body %}
+    <h1>ProjetImage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ projet_image.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ projet_image.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_projetImage_index', {'id': projet_image.projet.id}) }}">back to list</a>
+
+    <a href="{{ path('admin_projetImage_edit', {'id': projet_image.id}) }}">edit</a>
+
+    {{ include('admin/projet_image/_delete_form.html.twig') }}
+{% endblock %}

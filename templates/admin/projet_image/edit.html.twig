@@ -1,0 +1,231 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}Edit ProjetImage{% endblock %}
+{% block head %}
+    <link
+    rel="stylesheet"
+    href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css"
+    />
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.css">
+{% endblock %}
+
+{% block body %}
+
+    <style>
+        #container{
+            height: 1200px;
+        }
+    </style>  
+
+        <div id="container">
+            <div id="tui-image-editor-container" ></div>
+        </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js" integrity="sha512-1+czAStluVmzKLZD98uvRGNVbc+r9zLKV4KeAJmvikygfO71u3dtgo2G8+uB1JjCh2GVln0ofOpz9ZTxqJQX/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tui-code-snippet/2.2.0/tui-code-snippet.js" integrity="sha512-mAvab4Oz45PrynpT7P2J0XwsPy6k8gh0kf88n6GNaMpNGg0vwjTx58jUHvUmDgG/745tlS+rsGfaqtdKHGHSzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.js"></script>
+    <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
+    
+    <script>
+        // Image editor
+        var imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
+            includeUI: {
+                loadImage: {
+                    path: '/images/imageprojet/{{ projet_image }}',
+                    name: 'SampleImage',
+                },
+                initMenu: 'filter',
+                menuBarPosition: 'bottom',
+            },
+            cssMaxWidth: 1200,
+            Height: 1000,
+            usageStatistics: false,
+        });
+        window.onresize = function () {
+            imageEditor.ui.resizeEditor();
+        };
+
+        $('.tui-image-editor-header-buttons .tui-image-editor-download-btn').
+        replaceWith('<button class="tui-image-editor-save-btn" >Save</button>')
+        
+        document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-save-btn').
+        addEventListener('click', this.prcoessSaveImage)
+
+        function prcoessSaveImage(){
+
+        Swal.fire({
+            title: 'Envoi en cour',
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        })
+
+        $.ajax({
+            url: "{{ path('admin_projetImage_editor', {'id': imageId }) }}",
+            type: 'post',
+            data: {data: imageEditor.toDataURL()},
+            success: () => {
+                let timerInterval
+                Swal.fire({
+                title: 'édition réussi!',
+                icon: 'success',
+                html: 'redirection dans <b></b> milliseconds.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+                }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.replace("{{ path('admin_projetImage_index', {'id': return }) }}");
+                }
+                })
+            },
+            error: (data) => {
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',   
+                })
+            }
+        });
+        }
+
+    </script>
+
+    {# <script>
+
+            window.FilerobotImageEditor 
+
+            const { TABS, TOOLS } = FilerobotImageEditor;
+            const config = {
+            source: '/images/imageprojet/{{ projet_image }}',
+            onSave: (editedImageObject, designState, getCurrentImgData) => {
+                Swal.fire({
+                            title: 'Envoi en cour',
+                            didOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                var json = JSON.stringify(editedImageObject)
+                $.ajax({
+                    url: "{{ path('admin_projetImage_editor', {'id': imageId }) }}",
+                    type: 'post',
+                    data: {data: json},
+                    success: () => {
+                        let timerInterval
+                        Swal.fire({
+                        title: 'édition réussi!',
+                        icon: 'success',
+                        html: 'redirection dans <b></b> milliseconds.',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                        }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            window.location.replace("{{ path('admin_projetImage_index', {'id': return }) }}");
+                        }
+                        })
+                    },
+                    error: (data) => {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',   
+                        })
+                    }
+                });
+            },
+            annotationsCommon: {
+                fill: '#ff0000',
+            },
+            Text: { text: 'Filerobot...' },
+            translations: {
+                profile: 'Profile',
+                coverPhoto: 'Cover photo',
+                facebook: 'Facebook',
+                socialMedia: 'Social Media',
+                fbProfileSize: '180x180px',
+                fbCoverPhotoSize: '820x312px',
+                saveAsModalLabel: "Option de sauvegarde",
+            },
+            Crop: {
+                presetsItems: [
+                {
+                    titleKey: 'classicTv',
+                    descriptionKey: '4:3',
+                    ratio: 4 / 3,
+                    // icon: CropClassicTv, // optional, CropClassicTv is a React Function component. Possible (React Function component, string or HTML Element)
+                },
+                {
+                    titleKey: 'cinemascope',
+                    descriptionKey: '21:9',
+                    ratio: 21 / 9,
+                    // icon: CropCinemaScope, // optional, CropCinemaScope is a React Function component.  Possible (React Function component, string or HTML Element)
+                },
+                ],
+                presetsFolders: [
+                {
+                    titleKey: 'socialMedia', // will be translated into Social Media as backend contains this translation key
+                    // icon: Social, // optional, Social is a React Function component. Possible (React Function component, string or HTML Element)
+                    groups: [
+                    {
+                        titleKey: 'facebook',
+                        items: [
+                        {
+                            titleKey: 'profile',
+                            width: 180,
+                            height: 180,
+                            descriptionKey: 'fbProfileSize',
+                        },
+                        {
+                            titleKey: 'coverPhoto',
+                            width: 820,
+                            height: 312,
+                            descriptionKey: 'fbCoverPhotoSize',
+                        },
+                        ],
+                    },
+                    ],
+                },
+                ],
+            },
+            tabsIds: [TABS.ADJUST], // or ['Adjust', 'Annotate', 'Watermark']
+            defaultTabId: TABS.ADJUST, // or 'Annotate'
+
+            };
+
+            // Assuming we have a div with id="editor_container"
+            const filerobotImageEditor = new FilerobotImageEditor(
+            document.querySelector('#editor_container'),
+            config,
+            );
+
+            filerobotImageEditor.render({
+            onClose: (closingReason) => {
+                console.log('Closing reason', closingReason);
+                filerobotImageEditor.terminate();
+            },
+            }); 
+    </script>#}
+
+{% endblock %} 

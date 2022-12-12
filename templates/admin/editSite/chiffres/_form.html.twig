@@ -1,0 +1,40 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<div class="row mt-5 d-flex justify-content-center ">
+    <div class="card mb-3 text-center col-6 bg-dark" style="max-width: 50rem;">
+        <div class="card-header">Chiffre</div>
+        <div class="card-body">
+
+                <div class="row mb-4">
+                <div class="col">
+                <div class="form-outline form-white">
+                    {{ form_widget(form.collab, {'attr': {'class': 'form-control'}}) }}
+                    <label class="form-label" for="footer_adresse">collaborateurs</label>
+                </div>
+                </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4 form-white">
+                    {{ form_widget(form.digital, {'attr': {'class': 'form-control'}}) }}
+                    <label class="form-label" for="footer_email">Digital</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-white">
+                    {{ form_widget(form.photo, {'attr': {'class': 'form-control'}}) }}
+                    <label class="form-label" for="footer_tel">Photo</label>
+            </div>
+
+            <div class="form-outline mb-4 form-white">
+                    {{ form_widget(form.video, {'attr': {'class': 'form-control'}}) }}
+                    <label class="form-label" for="footer_tel">Video</label>
+            </div>
+
+            <button class="btn btn-block btn-primary">{{ button_label|default('Save') }}</button>
+
+
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}

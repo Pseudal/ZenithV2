@@ -1,0 +1,352 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block title %}ProjetImage index{% endblock %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('loader') }}
+{% endblock %}
+{% block body %}
+<div id="loading" class="loading"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+
+        ul {
+        list-style-type: none;
+        }
+
+        .imagez {
+        display: inline-block;
+        }
+
+        .imagez input[type="checkbox"][id^="cb"] {
+        display: none;
+        }
+
+        .imagez label {
+        border: 1px solid #fff;
+        padding: 10px;
+        display: block;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        .imagez label::before {
+        background-color: white;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        border: 1px solid grey;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+        }
+
+        .imagez label img {
+        height: 300px;
+        width: 300px;
+        transition-duration: 0.2s;
+        transform-origin: 50% 50%;
+        object-fit: cover;
+        }
+
+        .imagez :checked+label {
+        border-color: #ddd;
+        }
+
+        .imagez :checked+label::before {
+        content: "✓";
+        background-color: grey;
+        transform: scale(1);
+        }
+
+        .imagez :checked+label img {
+        transform: scale(0.9);
+        box-shadow: 0 0 5px #333;
+        z-index: -1;
+        }
+        ul .option{
+            position: absolute!important; 
+            left: 75%;
+            top :83%;
+        }
+        ul .option2{
+            position: absolute!important; 
+            left: 55%;
+            top :83%;
+        }
+        .card-img{
+            object-fit: cover;
+            width: 100%;
+            height: 15vw;
+            width: 25vw;
+        }
+    </style>
+    
+    {# <a class="btn btn-primary position-absolute" style="top: 75px; left: 10px;" {% if from %} href="{{ path('admin_projet_fromClient_index', {'id': clientid }) }}" {% else %}  href="{{ path('admin_projet_index') }}"  {% endif %}><i class="fas fa-arrow-left"></i></a> #}
+
+    <h1 class="title text-center m-3">Images du projet : {{projet.nomClient}} </h1>
+
+    <div class="d-flex justify-content-center align-items-center m-5">
+
+        <div class="card bg-dark text-white m-2">
+            <img {% if presentation[1] %} src="{{ vich_uploader_asset(presentation[1], 'imageFile')}}" {% else %} src="https://www.mybtekstil.com/i/0/myb-tekstil-kimdir.png" {% endif %} id="imgheader" class="card-img img-fluid" alt="Stony Beach"/>
+            <div class="card-img-overlay">
+                <h5 class="card-title p-3 mb-2 bg-dark text-white d-inline rounded">Header</h5>
+            </div>
+        </div>
+
+        <div class="card bg-dark text-white m-2">
+            <img {% if presentation[2] %} src="{{ vich_uploader_asset(presentation[2], 'imageFile')}}" {% else %} src="https://www.mybtekstil.com/i/0/myb-tekstil-kimdir.png" {% endif %} id="imgsecondaire" class="card-img" alt="Stony Beach"/>
+            <div class="card-img-overlay">
+                <h5 class="card-title p-3 mb-2 bg-dark text-white d-inline rounded">Secondaire</h5>
+            </div>
+        </div>
+
+        <div class="card bg-dark text-white m-2">
+            <img {% if presentation[3] %} src="{{ vich_uploader_asset(presentation[3], 'imageFile')}}" {% else %} src="https://www.mybtekstil.com/i/0/myb-tekstil-kimdir.png" {% endif %} id="imgfocus" class="card-img" alt="Stony Beach"/>
+            <div class="card-img-overlay">
+                <h5 class="card-title p-3 mb-2 bg-dark text-white d-inline rounded">Focus</h5>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="title text-center m-3">Toutes les images </h1>
+
+    {% if projet_images %}
+        
+        <ul>
+            {% for projet_image in projet_images %}
+
+
+                    <li class="imagez">
+                        <input name="locationthemes" type="checkbox" id="cb{{projet_image.id}}" value="{{projet_image.id}}"/>
+                        <label class="rounded" for="cb{{projet_image.id}}"><img  id="cbImage{{projet_image.id}}" class="rounded" src="{{ vich_uploader_asset(projet_image, 'imageFile')}}" {% if not projet_image.visible %} style="filter:brightness(10%);" {% endif %}/>       
+                            <button type="button" class="btn btn-primary option" data-mdb-toggle="modal" data-mdb-target="#exampleModal{{projet_image.id}}">
+                                <i class="fas fa-eye"></i>
+                            </button>    
+                             <button type="button" class="btn btn-warning option2" data-mdb-toggle="modal" data-mdb-target="#OptionModal{{projet_image.id}}">
+                                <i class="fas fa-edit"></i>
+                            </button>                
+                        </label>
+                    </li>
+                    
+  
+                
+            <div class="modal fade" id="exampleModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">{{projet_image.image}}</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                        <div class="modal-body d-flex justify-content-center align-items-center"><img class="img-fluid" id="ici" src="{{ vich_uploader_asset(projet_image, 'imageFile')}}" alt=""></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="modal fade" id="OptionModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLabel">{{projet_image.image}}</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <div class="form-check form-switch">
+                                <input data-img-route="{{ vich_uploader_asset(projet_image, 'imageFile')}}" data-typeaction="header" data-idimg="{{projet_image.id}}" data-route="{{ path('setheaderclient', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btnHeader{{projet_image.id}}" {% if projet_image.header %} checked {% endif %} />
+                                <label class="form-check-label" for="btnHeader{{projet_image.id}}">Header</label>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input data-img-route="{{ vich_uploader_asset(projet_image, 'imageFile')}}" data-typeaction="secondaire" data-idimg="{{projet_image.id}}" data-route="{{ path('setsecondaireclient', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btnsecondaire{{projet_image.id}}" {% if projet_image.secondaire %} checked {% endif %} />
+                                <label class="form-check-label" for="btnsecondaire{{projet_image.id}}">secondaire</label>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input data-img-route="{{ vich_uploader_asset(projet_image, 'imageFile')}}" data-typeaction="focus" data-idimg="{{projet_image.id}}" data-route="{{ path('setfocusclient', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btnfocus{{projet_image.id}}" {% if projet_image.imageprecision %} checked {% endif %} />
+                                <label class="form-check-label" for="btnfocus{{projet_image.id}}">focus</label>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input data-typeaction="visible" data-idimg="{{projet_image.id}}" data-route="{{ path('setvisibleclient', {'id': projet_image.id }) }}" class="form-check-input btnaction" type="checkbox" role="switch" id="btnvisible{{projet_image.id}}" {% if projet_image.visible %} checked {% endif %} />
+                                <label class="form-check-label" for="btnvisible{{projet_image.id}}">Visible</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                        <a type="button" class="btn btn-warning" href="{{ path('admin_clientImage_edit', {'id': projet_image.id}) }}">Editeur</a>
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+            {% endfor %} 
+            </ul>
+
+                <script>
+                    function ajaxaction(id, route, type, img){
+                        $.ajax({
+                            type: "POST",
+                            url: route,
+                            data: {id: id},
+                            success: function (result) {
+                                
+                                if(result.msg){
+                                    for (i = 0; i < inputs.length; i++) {
+                                        if(inputs[i].getAttribute('data-idimg') == result.msg && inputs[i].getAttribute('data-typeaction') == type) {
+                                            console.log('trouvé')
+                                            inputs[i].checked = false;
+                                        }
+                                    }  
+                                }
+                                if(type == 'visible'){
+                                    let thisImage = document.getElementById('cbImage'+id)
+                                    console.log(thisImage)
+                                    if(result.data == "false")                                                                    
+                                        thisImage.style.filter = "brightness(10%)";
+                                    else
+                                        thisImage.style.filter = "brightness(100%)";
+                                    }
+                                else{
+                                    let changeimg = document.querySelector('#img'+type);
+                                    if(result.data == "false")                                                                    
+                                        changeimg.src= "https://www.mybtekstil.com/i/0/myb-tekstil-kimdir.png";
+                                    else
+                                        changeimg.src= img;
+                                }
+                            }
+                        });
+                    } 
+                    var inputs = document.querySelectorAll(".btnaction")
+                    for (i = 0; i < inputs.length; i++) {
+                        inputs[i].addEventListener('click', function(e) {
+                            ajaxaction(this.getAttribute('data-idimg'), this.getAttribute('data-route'), this.getAttribute('data-typeaction'), this.getAttribute('data-img-route'))
+                        });
+                    }
+
+                </script>
+
+            <button class="btn btn-danger"id="btnlol">Supprimer les images</button>
+            </div>
+        </div>
+        </tbody>
+    </table>
+    <a class="btn btn-primary ms-2" href="{{ path('admin_clientImage_new', {'id': id }) }}">Create new</a>
+    {% else %}
+        <div class="alert alert-danger container text-center" role="alert">
+            <h4 class="alert-danger">Oups!</h4>
+            <p>Aucune image trouvé</p>
+            <a class="btn btn-primary" href="{{ path('admin_clientImage_new', {'id': id }) }}">Créer ma première image !</a>
+        </div>
+    {% endif %}
+    
+    <script>
+
+    let btn = document.querySelector('#btnlol')
+    let supp = []
+    
+    btn.onclick = ()=>{
+
+        $('input[name="locationthemes"]:checked').each(function() {
+            console.log(this.value);
+            supp.push(this.value);
+        }).promise().done( function(){
+
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success m-2',
+                cancelButton: 'btn btn-danger m-2'
+            },
+            buttonsStyling: false
+            })
+
+             swalWithBootstrapButtons.fire({
+                title: 'Image selectionné',
+                text: "Etes vous sûr de supprimer ces images ?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Oui',
+                cancelButtonText: 'Non',
+                reverseButtons: true
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    $.ajax({
+                        url: "{{ path('multideleteclient') }}",
+                        type: 'post',
+                        data: {data: supp},
+                        success: () => {
+                            let timerInterval
+                            Swal.fire({
+                            title: 'Suppression réussi!',
+                            icon: 'success',
+                            html: 'redirection dans <b></b> milliseconds.',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                            }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                window.location.replace("{{ path('admin_clientImage_index', {'id': id }) }}")
+                            } else {
+                                window.location.replace("{{ path('admin_clientImage_index', {'id': id }) }}")
+                            }
+                            })
+                        },
+                        error: (data) => {
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',   
+                            })
+                        }
+                    });                    
+
+                } 
+                else if (result.dismiss === Swal.DismissReason.cancel){
+                    location.reload();
+                }
+                else{
+                    location.reload();
+                }
+            })
+        });
+    }
+    </script>
+{% block js %}
+    {{ encore_entry_script_tags('loaderjs') }}
+{% endblock %}
+{% endblock %}
